@@ -4,3 +4,21 @@ body {
   font-size: 2rem;
   font-weight: 500;
 }
+
+.secondaryHeading {
+  font-size: 2.07rem;
+  font-weight: 700;
+}
+
+.main-nav-bar {
+  &--box {
+    .icon-container {
+      color: var(--color-gray-Shadowy);
+      text-align: center;
+      .icon-text {
+        font-weight: 400;
+        font-size: 1.1rem;
+      }
+    }
+  }
+}

@@ -7,10 +7,8 @@
     display: flex;
     justify-content: space-around;
     align-content: flex-start;
-    color: var(--color-gray-Shadowy);
 
     .icon-container {
-      text-align: center;
       flex: 1;
       .icon {
         margin: 0.5rem;
@@ -19,8 +17,6 @@
       }
       .icon-text {
         display: block;
-        font-weight: 400;
-        font-size: 1.1rem;
         line-height: normal;
       }
     }
