@@ -1,0 +1,21 @@
+:root {
+  --color-primary-text: #fff;
+  --color-gray-Shadowy: #b3b3b3;
+  --color-gray-dark: #7f7f7f;
+
+  --color-gray-btn: #b9babb;
+
+  --color-primary-background: #121212;
+  --color-primary-nav: #282828;
+  --color-green: #57b560;
+
+  --color-home-gradientBG: rgba(46, 28, 144, 0.55);
+  --color-album-gradientBG: #337183;
+  --color-likedSongs-gradientBG: linear-gradient(
+    180deg,
+    rgba(46, 28, 144, 0.75) 0%,
+    rgba(116, 115, 127, 0.75) 100%
+  );
+
+  --font-primary: 'Circular Std Medium', sans-serif;
+}
