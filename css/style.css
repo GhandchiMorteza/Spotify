@@ -36,4 +36,13 @@ body {
   font-weight: 400;
 }
 
+.page {
+  background-color: black;
+  display: none;
+}
+
+#page-home {
+  display: block;
+}
+
 /*# sourceMappingURL=style.css.map */
