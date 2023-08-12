@@ -30,16 +30,22 @@ html {
 }
 
 .page {
-  background-color: black;
+  background-color: var(--color-primary-background);
   display: none;
 }
 
-.main-nav-bar--box {
-  background-color: var(--color-primary-nav);
+.container {
+  display: flex;
+  justify-content: space-between;
+  flex-direction: column;
+  height: 100vh;
+  position: fixed;
+  top: 0;
+  left: 0;
 }
 
-#page-home {
-  display: block;
+.pages-container {
+  flex-grow: 1;
 }
 
 @font-face {
@@ -75,6 +81,45 @@ body {
   color: var(--color-primary-text);
   font-size: 2rem;
   font-weight: 500;
+}
+
+.main-nav-bar {
+  height: 10.8vh;
+  width: 100vw;
+}
+.main-nav-bar--box {
+  height: 100%;
+  background-color: var(--color-primary-nav);
+  display: flex;
+  justify-content: space-around;
+  align-content: flex-start;
+  color: var(--color-gray-Shadowy);
+}
+.main-nav-bar--box .icon-container {
+  text-align: center;
+  flex: 1;
+}
+.main-nav-bar--box .icon-container .icon {
+  margin: 0.5rem;
+  width: 2.4rem;
+  height: 2.4rem;
+}
+.main-nav-bar--box .icon-container .icon-text {
+  display: block;
+  font-weight: 400;
+  font-size: 1.1rem;
+  line-height: normal;
+}
+
+#page-home {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  height: 100%;
+}
+
+.page-home > section {
+  height: 15rem;
 }
 
 /*# sourceMappingURL=style.css.map */

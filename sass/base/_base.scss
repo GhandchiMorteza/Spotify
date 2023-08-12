@@ -13,16 +13,20 @@ html {
 }
 
 .page {
-  background-color: black;
+  background-color: var(--color-primary-background);
   display: none;
 }
 
-.main-nav-bar {
-  &--box {
-    background-color: var(--color-primary-nav);
-  }
+.container {
+  display: flex;
+  justify-content: space-between;
+  flex-direction: column;
+  height: 100vh;
+  position: fixed;
+  top: 0;
+  left: 0;
 }
 
-#page-home {
-  display: block;
+.pages-container {
+  flex-grow: 1;
 }

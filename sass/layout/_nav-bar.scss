@@ -1,0 +1,28 @@
+.main-nav-bar {
+  height: 10.8vh;
+  width: 100vw;
+  &--box {
+    height: 100%;
+    background-color: var(--color-primary-nav);
+    display: flex;
+    justify-content: space-around;
+    align-content: flex-start;
+    color: var(--color-gray-Shadowy);
+
+    .icon-container {
+      text-align: center;
+      flex: 1;
+      .icon {
+        margin: 0.5rem;
+        width: 2.4rem;
+        height: 2.4rem;
+      }
+      .icon-text {
+        display: block;
+        font-weight: 400;
+        font-size: 1.1rem;
+        line-height: normal;
+      }
+    }
+  }
+}
