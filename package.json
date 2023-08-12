@@ -1,0 +1,22 @@
+{
+  "name": "spotify",
+  "version": "1.0.0",
+  "description": "Spotify app practice",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/GhandchiMorteza/Spotify.git"
+  },
+  "author": "Morteza Ghandchi",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/GhandchiMorteza/Spotify/issues"
+  },
+  "homepage": "https://github.com/GhandchiMorteza/Spotify#readme",
+  "devDependencies": {
+    "sass": "^1.65.1"
+  }
+}
