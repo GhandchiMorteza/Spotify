@@ -1,0 +1,25 @@
+.main-nav {
+  height: 10.8vh;
+  width: 100vw;
+  flex-shrink: 0;
+
+  &__flex-container {
+    height: 100%;
+    background-color: var(--color-primary-nav);
+    display: flex;
+    justify-content: space-around;
+    align-content: flex-start;
+  }
+  &__item {
+    flex: 1;
+  }
+  &__icon {
+    margin: 0.5rem;
+    width: 2.4rem;
+    height: 2.4rem;
+  }
+  &__text {
+    display: block;
+    line-height: normal;
+  }
+}

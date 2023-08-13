@@ -1,6 +1,7 @@
 #page-home {
   display: block;
   height: 100%;
+  overflow-y: auto;
   .home-container {
     height: 100%;
     display: flex;
@@ -8,6 +9,7 @@
     justify-content: flex-end;
     margin-left: var(--page-margin);
   }
+  // Gradient BG
   ::after {
     content: '';
     width: 100rem;
@@ -26,7 +28,7 @@
   height: auto;
 }
 
-.home-container-gener {
+.genre-section {
   margin-right: calc(var(--page-margin) * 2);
 }
 
