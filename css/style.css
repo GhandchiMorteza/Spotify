@@ -8,8 +8,9 @@
   --color-green: #57b560;
   --color-box: #262626;
   --color-home-gradientBG: radial-gradient(
-    rgba(53, 32, 174, 0.5),
-    rgba(0, 0, 0, 1)
+    circle at top left,
+    rgba(46, 28, 144, 0.55) 0,
+    rgba(12, 12, 12, 1) 45%
   );
   --color-album-gradientBG: #337183;
   --color-likedSongs-gradientBG: linear-gradient(
@@ -45,7 +46,6 @@ span {
 .view-container {
   display: flex;
   justify-content: flex-end;
-  justify-content: space-between;
   flex-direction: column;
   height: 100vh;
   position: fixed;
@@ -57,7 +57,6 @@ span {
   flex-grow: 1;
   background-color: var(--color-primary-background);
   z-index: -2;
-  margin-bottom: 85.3rem;
 }
 
 @font-face {
@@ -134,9 +133,14 @@ body {
   margin-top: 5.1rem !important;
 }
 
+.center-horizontal {
+  display: flex;
+  justify-content: center;
+}
+
 .thumbnail-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(18.7rem, 1fr));
+  grid-template-columns: repeat(auto-fill, minmax(18.7rem, 1fr));
   gap: 0.8rem;
 }
 .thumbnail-grid__item-box {
@@ -188,7 +192,7 @@ body {
 }
 
 .main-nav {
-  height: 10.8vh;
+  height: min-max(min-content, 10.8vh);
   width: 100vw;
   flex-shrink: 0;
 }
@@ -201,6 +205,7 @@ body {
 }
 .main-nav__item {
   flex: 1;
+  margin-bottom: 3.5rem;
 }
 .main-nav__icon {
   margin: 0.5rem;
@@ -215,7 +220,7 @@ body {
 #page-home {
   display: block;
   height: 100%;
-  overflow-y: auto;
+  background: var(--color-home-gradientBG);
 }
 #page-home .home-container {
   height: 100%;
@@ -223,18 +228,7 @@ body {
   flex-direction: column;
   justify-content: flex-end;
   margin-left: var(--page-margin);
-}
-#page-home ::after {
-  content: "";
-  width: 100rem;
-  height: 100rem;
-  position: absolute;
-  border-radius: 50%;
-  background: var(--color-home-gradientBG);
-  z-index: -1;
-  top: -70rem;
-  left: -60rem;
-  filter: blur(5rem);
+  overflow-y: auto;
 }
 
 .home-container > section {

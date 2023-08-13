@@ -1,5 +1,5 @@
 .main-nav {
-  height: 10.8vh;
+  height: min-max(min-content, 10.8vh);
   width: 100vw;
   flex-shrink: 0;
 
@@ -12,6 +12,7 @@
   }
   &__item {
     flex: 1;
+    margin-bottom: 3.5rem;
   }
   &__icon {
     margin: 0.5rem;
