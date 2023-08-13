@@ -217,15 +217,15 @@ body {
 }
 #page-home ::after {
   content: "";
-  width: 46rem;
-  height: 46rem;
+  width: 100rem;
+  height: 100rem;
   position: absolute;
   border-radius: 50%;
-  background-image: var(--color-home-gradientBG);
+  background: var(--color-home-gradientBG);
   z-index: -1;
-  top: -32rem;
-  left: -15rem;
-  filter: blur(20rem);
+  top: -70rem;
+  left: -60rem;
+  filter: blur(5rem);
 }
 
 .home-container > section {
@@ -234,6 +234,14 @@ body {
 
 .home-container-gener {
   margin-right: calc(var(--page-margin) * 2);
+}
+
+.icon-Settings {
+  width: 2.2rem;
+  height: 2.2rem;
+  position: absolute;
+  right: calc(var(--page-margin) * 2.2);
+  top: 3rem;
 }
 
 /*# sourceMappingURL=style.css.map */
