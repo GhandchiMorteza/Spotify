@@ -8,9 +8,15 @@
 @import 'base/typography';
 @import 'base/utilities';
 
-@import 'components/genre-grid';
-@import 'components/img-slider-you';
+@import 'components/thumbnail-grid';
+@import 'components/carousel';
 
-@import 'layout/nav-bar';
+@import 'layout/main-nav';
 
+@import 'pages/album';
+@import 'pages/artist';
 @import 'pages/home';
+@import 'pages/library';
+@import 'pages/liked';
+@import 'pages/player';
+@import 'pages/search';

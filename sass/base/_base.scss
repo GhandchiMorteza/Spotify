@@ -12,18 +12,21 @@ html {
   box-sizing: border-box;
 }
 
+span {
+  font-weight: 400;
+}
+
 .page {
   display: none;
 }
 
-.container {
+.view-container {
   display: flex;
-  justify-content: space-between;
+  justify-content: flex-end;
   flex-direction: column;
   height: 100vh;
   position: fixed;
   top: 0;
-  left: 0;
 }
 
 .pages-container {

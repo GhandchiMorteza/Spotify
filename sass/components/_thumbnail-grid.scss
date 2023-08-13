@@ -1,20 +1,19 @@
-.gird-container {
+.thumbnail-grid {
   display: grid;
 
-  grid-template-columns: repeat(auto-fit, minmax(18.7rem, 1fr));
+  grid-template-columns: repeat(auto-fill, minmax(18.5rem, 1fr));
   gap: 0.8rem;
 
-  &--box {
+  &__item-box {
     border-radius: 0.4rem 0.4rem 0.4rem 0.4rem;
     display: flex;
     align-items: center;
     background-color: var(--color-box);
     width: auto;
-
-    &__image {
-      width: 5.6rem;
-      height: 5.6rem;
-      margin-right: 0.8rem;
-    }
+  }
+  &__image {
+    width: 5.6rem;
+    height: 5.6rem;
+    margin-right: 0.8rem;
   }
 }

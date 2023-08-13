@@ -1,4 +1,4 @@
-.container--slider {
+.carousel {
   display: flex;
   margin-bottom: 0.8rem;
   width: 100vw;
@@ -13,31 +13,28 @@
     display: none;
   }
 
-  &__image-you {
+  &__item {
     width: 16.6rem;
     height: 16.6rem;
     flex-shrink: 0;
     margin-right: 1.6rem;
     scroll-snap-align: start;
+
+    &--txt {
+      width: 12.4rem;
+      margin-right: 1.6rem;
+      display: flex;
+      flex-direction: column;
+    }
   }
 
-  &__image-box {
+  &__text {
+    margin-top: 0.7rem;
+    font-size: 1.1rem;
+  }
+
+  &__image {
     width: 12.4rem;
-    margin-right: 1.6rem;
-    display: flex;
-    flex-direction: column;
-
-    .image-recently {
-      width: 12.4rem;
-      height: 12.4rem;
-      flex-shrink: 0;
-      scroll-snap-align: start;
-    }
-
-    .text-recently {
-      margin-top: 0.7rem;
-      font-size: 1.1rem;
-      font-weight: 400;
-    }
+    height: 12.4rem;
   }
 }

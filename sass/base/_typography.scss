@@ -10,20 +10,22 @@ body {
   font-weight: 700;
 }
 
-.main-nav-bar {
-  &--box {
-    .icon-container {
-      color: var(--color-gray-Shadowy);
-      text-align: center;
-      .icon-text {
-        font-weight: 400;
-        font-size: 1.1rem;
-      }
-    }
+.main-nav {
+  &__item {
+    color: var(--color-gray-Shadowy);
+    text-align: center;
+  }
+  &__text {
+    font-weight: 400;
+    font-size: 1.1rem;
   }
 }
 
 .ternaryHeading {
   font-size: 1.1rem;
   font-weight: 700;
+}
+
+.thumbnail-grid__title {
+  font-size: 1.1rem;
 }
