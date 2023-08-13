@@ -50,7 +50,6 @@ span {
   height: 100vh;
   position: fixed;
   top: 0;
-  left: 0;
 }
 
 .pages-container {
@@ -140,7 +139,7 @@ body {
 
 .thumbnail-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(18.7rem, 1fr));
+  grid-template-columns: repeat(auto-fill, minmax(18.5rem, 1fr));
   gap: 0.8rem;
 }
 .thumbnail-grid__item-box {
@@ -217,8 +216,12 @@ body {
   line-height: normal;
 }
 
-#page-home {
+#page-album {
   display: block;
+  width: 100vw;
+}
+
+#page-home {
   height: 100%;
   background: var(--color-home-gradientBG);
 }

@@ -1,5 +1,5 @@
 #page-home {
-  display: block;
+  // display: block;
   height: 100%;
   background: var(--color-home-gradientBG);
 
@@ -11,19 +11,6 @@
     margin-left: var(--page-margin);
     overflow-y: auto;
   }
-  // Gradient BG
-  // ::after {
-  //   content: '';
-  //   width: 100rem;
-  //   height: 100rem;
-  //   position: absolute;
-  //   border-radius: 50%;
-  //
-  //   z-index: -1;
-  //   top: -70rem;
-  //   left: -60rem;
-  //   filter: blur(5rem);
-  // }
 }
 
 .home-container > section {
