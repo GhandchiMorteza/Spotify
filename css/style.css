@@ -6,14 +6,19 @@
   --color-primary-background: #121212;
   --color-primary-nav: #282828;
   --color-green: #57b560;
-  --color-home-gradientBG: rgba(46, 28, 144, 0.55);
+  --color-box: #262626;
+  --color-home-gradientBG: radial-gradient(
+    rgba(53, 32, 174, 0.5),
+    rgba(0, 0, 0, 1)
+  );
   --color-album-gradientBG: #337183;
   --color-likedSongs-gradientBG: linear-gradient(
     180deg,
     rgba(46, 28, 144, 0.75) 0%,
     rgba(116, 115, 127, 0.75) 100%
   );
-  --font-primary: "Circular Std Medium", sans-serif;
+  --font-primary: "Circular Std", sans-serif;
+  --page-margin: 1.6rem;
 }
 
 *,
@@ -29,20 +34,206 @@ html {
   box-sizing: border-box;
 }
 
+.page {
+  display: none;
+}
+
+.container {
+  display: flex;
+  justify-content: space-between;
+  flex-direction: column;
+  height: 100vh;
+  position: fixed;
+  top: 0;
+  left: 0;
+}
+
+.pages-container {
+  flex-grow: 1;
+  background-color: var(--color-primary-background);
+  z-index: -2;
+}
+
+@font-face {
+  font-family: "Circular Std";
+  src: url("https://db.onlinewebfonts.com/t/860c3ec7bbc5da3e97233ccecafe512e.eot");
+  src: url("https://db.onlinewebfonts.com/t/860c3ec7bbc5da3e97233ccecafe512e.eot?#iefix") format("embedded-opentype"), url("https://db.onlinewebfonts.com/t/860c3ec7bbc5da3e97233ccecafe512e.woff2") format("woff2"), url("https://db.onlinewebfonts.com/t/860c3ec7bbc5da3e97233ccecafe512e.woff") format("woff"), url("https://db.onlinewebfonts.com/t/860c3ec7bbc5da3e97233ccecafe512e.ttf") format("truetype"), url("https://db.onlinewebfonts.com/t/860c3ec7bbc5da3e97233ccecafe512e.svg#Circular Std Book") format("svg");
+  font-weight: 400;
+  font-style: normal;
+}
+@font-face {
+  font-family: "Circular Std";
+  src: url("https://db.onlinewebfonts.com/t/961a181da27e7cbc072ec2fb5bbfe2a9.eot");
+  src: url("https://db.onlinewebfonts.com/t/961a181da27e7cbc072ec2fb5bbfe2a9.eot?#iefix") format("embedded-opentype"), url("https://db.onlinewebfonts.com/t/961a181da27e7cbc072ec2fb5bbfe2a9.woff2") format("woff2"), url("https://db.onlinewebfonts.com/t/961a181da27e7cbc072ec2fb5bbfe2a9.woff") format("woff"), url("https://db.onlinewebfonts.com/t/961a181da27e7cbc072ec2fb5bbfe2a9.ttf") format("truetype"), url("https://db.onlinewebfonts.com/t/961a181da27e7cbc072ec2fb5bbfe2a9.svg#Circular Std Bold") format("svg");
+  font-weight: 700;
+  font-style: normal;
+}
+@font-face {
+  font-family: "Circular Std";
+  src: url("https://db.onlinewebfonts.com/t/9475d6a0b79c164f9f605673714e75d9.eot");
+  src: url("https://db.onlinewebfonts.com/t/9475d6a0b79c164f9f605673714e75d9.eot?#iefix") format("embedded-opentype"), url("https://db.onlinewebfonts.com/t/9475d6a0b79c164f9f605673714e75d9.woff2") format("woff2"), url("https://db.onlinewebfonts.com/t/9475d6a0b79c164f9f605673714e75d9.woff") format("woff"), url("https://db.onlinewebfonts.com/t/9475d6a0b79c164f9f605673714e75d9.ttf") format("truetype"), url("https://db.onlinewebfonts.com/t/9475d6a0b79c164f9f605673714e75d9.svg#Circular Std Medium") format("svg");
+  font-weight: 500;
+  font-style: normal;
+}
+@font-face {
+  font-family: "Circular Std";
+  src: url("https://db.onlinewebfonts.com/t/f1a22f6f15d272c7aa56da8b2c91f5e5.eot");
+  src: url("https://db.onlinewebfonts.com/t/f1a22f6f15d272c7aa56da8b2c91f5e5.eot?#iefix") format("embedded-opentype"), url("https://db.onlinewebfonts.com/t/f1a22f6f15d272c7aa56da8b2c91f5e5.woff2") format("woff2"), url("https://db.onlinewebfonts.com/t/f1a22f6f15d272c7aa56da8b2c91f5e5.woff") format("woff"), url("https://db.onlinewebfonts.com/t/f1a22f6f15d272c7aa56da8b2c91f5e5.ttf") format("truetype"), url("https://db.onlinewebfonts.com/t/f1a22f6f15d272c7aa56da8b2c91f5e5.svg#Circular Std Black") format("svg");
+  font-weight: 900;
+  font-style: normal;
+}
 body {
   font-family: var(--font-primary);
   color: var(--color-primary-text);
   font-size: 2rem;
+  font-weight: 500;
+}
+
+.secondaryHeading {
+  font-size: 2.07rem;
+  font-weight: 700;
+}
+
+.main-nav-bar--box .icon-container {
+  color: var(--color-gray-Shadowy);
+  text-align: center;
+}
+.main-nav-bar--box .icon-container .icon-text {
+  font-weight: 400;
+  font-size: 1.1rem;
+}
+
+.ternaryHeading {
+  font-size: 1.1rem;
+  font-weight: 700;
+}
+
+.u-margin-bottom-verysmall {
+  margin-bottom: 1.5rem !important;
+}
+
+.u-margin-bottom-small {
+  margin-bottom: 2.2rem !important;
+}
+
+.u-margin-top-normal {
+  margin-top: 3.3rem !important;
+}
+
+.u-margin-top-big {
+  margin-top: 5.1rem !important;
+}
+
+.gird-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(18.7rem, 1fr));
+  gap: 0.8rem;
+}
+.gird-container--box {
+  border-radius: 0.4rem 0.4rem 0.4rem 0.4rem;
+  display: flex;
+  align-items: center;
+  background-color: var(--color-box);
+  width: auto;
+}
+.gird-container--box__image {
+  width: 5.6rem;
+  height: 5.6rem;
+  margin-right: 0.8rem;
+}
+
+.container--slider {
+  display: flex;
+  margin-bottom: 0.8rem;
+  width: 100vw;
+  justify-content: left;
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+.container--slider::-webkit-scrollbar {
+  display: none;
+}
+.container--slider__image-you {
+  width: 16.6rem;
+  height: 16.6rem;
+  flex-shrink: 0;
+  margin-right: 1.6rem;
+  scroll-snap-align: start;
+}
+.container--slider__image-box {
+  width: 12.4rem;
+  margin-right: 1.6rem;
+  display: flex;
+  flex-direction: column;
+}
+.container--slider__image-box .image-recently {
+  width: 12.4rem;
+  height: 12.4rem;
+  flex-shrink: 0;
+  scroll-snap-align: start;
+}
+.container--slider__image-box .text-recently {
+  margin-top: 0.7rem;
+  font-size: 1.1rem;
   font-weight: 400;
 }
 
-.page {
-  background-color: black;
-  display: none;
+.main-nav-bar {
+  height: 10.8vh;
+  width: 100vw;
+}
+.main-nav-bar--box {
+  height: 100%;
+  background-color: var(--color-primary-nav);
+  display: flex;
+  justify-content: space-around;
+  align-content: flex-start;
+}
+.main-nav-bar--box .icon-container {
+  flex: 1;
+}
+.main-nav-bar--box .icon-container .icon {
+  margin: 0.5rem;
+  width: 2.4rem;
+  height: 2.4rem;
+}
+.main-nav-bar--box .icon-container .icon-text {
+  display: block;
+  line-height: normal;
 }
 
 #page-home {
   display: block;
+  height: 100%;
+}
+#page-home .home-container {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  margin-left: var(--page-margin);
+}
+#page-home ::after {
+  content: "";
+  width: 46rem;
+  height: 46rem;
+  position: absolute;
+  border-radius: 50%;
+  background-image: var(--color-home-gradientBG);
+  z-index: -1;
+  top: -32rem;
+  left: -15rem;
+  filter: blur(20rem);
+}
+
+.home-container > section {
+  height: auto;
+}
+
+.home-container-gener {
+  margin-right: calc(var(--page-margin) * 2);
 }
 
 /*# sourceMappingURL=style.css.map */

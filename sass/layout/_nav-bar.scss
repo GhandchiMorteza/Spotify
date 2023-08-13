@@ -1,0 +1,24 @@
+.main-nav-bar {
+  height: 10.8vh;
+  width: 100vw;
+  &--box {
+    height: 100%;
+    background-color: var(--color-primary-nav);
+    display: flex;
+    justify-content: space-around;
+    align-content: flex-start;
+
+    .icon-container {
+      flex: 1;
+      .icon {
+        margin: 0.5rem;
+        width: 2.4rem;
+        height: 2.4rem;
+      }
+      .icon-text {
+        display: block;
+        line-height: normal;
+      }
+    }
+  }
+}
