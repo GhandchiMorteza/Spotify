@@ -9,7 +9,12 @@
   --color-primary-nav: #282828;
   --color-green: #57b560;
 
-  --color-home-gradientBG: rgba(46, 28, 144, 0.55);
+  --color-box: #262626;
+
+  --color-home-gradientBG: radial-gradient(
+    rgba(53, 32, 174, 0.5),
+    rgba(0, 0, 0, 1)
+  );
   --color-album-gradientBG: #337183;
   --color-likedSongs-gradientBG: linear-gradient(
     180deg,

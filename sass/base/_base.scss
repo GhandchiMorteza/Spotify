@@ -13,7 +13,6 @@ html {
 }
 
 .page {
-  background-color: var(--color-primary-background);
   display: none;
 }
 
@@ -29,4 +28,6 @@ html {
 
 .pages-container {
   flex-grow: 1;
+  background-color: var(--color-primary-background);
+  z-index: -2;
 }

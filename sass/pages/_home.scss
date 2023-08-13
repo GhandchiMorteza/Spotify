@@ -6,14 +6,26 @@
     display: flex;
     flex-direction: column;
     justify-content: flex-end;
-    margin-left: var(--page-margin); 
-    
-    &--gener {
-      
-    }
+    margin-left: var(--page-margin);
+  }
+  ::after {
+    content: '';
+    width: 46rem;
+    height: 46rem;
+    position: absolute;
+    border-radius: 50%;
+    background-image: var(--color-home-gradientBG);
+    z-index: -1;
+    top: -32rem;
+    left: -15rem;
+    filter: blur(20rem);
   }
 }
 
 .home-container > section {
-  height: 15rem;
+  height: auto;
+}
+
+.home-container-gener {
+  margin-right: calc(var(--page-margin) * 2);
 }
