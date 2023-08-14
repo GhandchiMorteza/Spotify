@@ -137,6 +137,10 @@ body {
   justify-content: center;
 }
 
+.center-vertically {
+  display: flex;
+}
+
 .thumbnail-grid {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(18.5rem, 1fr));
