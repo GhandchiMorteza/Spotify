@@ -132,7 +132,7 @@ body {
   margin-top: 5.1rem !important;
 }
 
-.center-horizontal {
+.center-horizontally {
   display: flex;
   justify-content: center;
 }
