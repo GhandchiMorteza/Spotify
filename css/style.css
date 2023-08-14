@@ -17,10 +17,10 @@
     rgba(33, 71, 83, 1) 0,
     rgba(12, 12, 12, 1) 85%
   );
-  --color-likedSongs-gradientBG: linear-gradient(
-    180deg,
-    rgba(46, 28, 144, 0.75) 0%,
-    rgba(116, 115, 127, 0.75) 100%
+  --color-likedSongs-gradientBG: radial-gradient(
+    circle at top center,
+    rgba(46, 28, 144, 0.75) -25rem,
+    rgba(12, 12, 12, 1) 35%
   );
   --font-primary: "Circular Std", sans-serif;
   --page-margin: 1.6rem;
@@ -138,6 +138,21 @@ span {
   font-size: 0.9rem;
 }
 
+#page-liked .secondaryHeading {
+  font-size: 2.1rem;
+  letter-spacing: -0.042rem;
+}
+#page-liked .play-text {
+  color: #fff;
+  text-align: center;
+  font-family: Circular Std;
+  font-size: 1.2rem;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+  letter-spacing: 0.12rem;
+}
+
 .mgb-1 {
   margin-bottom: 1rem !important;
 }
@@ -152,6 +167,18 @@ span {
 
 .mgb-2p2 {
   margin-bottom: 2.2rem !important;
+}
+
+.mgb-2p5 {
+  margin-bottom: 2.5rem !important;
+}
+
+.mgb-13p6 {
+  margin-bottom: 13.6rem !important;
+}
+
+.mgt-1p6 {
+  margin-top: 1.6rem !important;
 }
 
 .mgt-3 {
@@ -170,6 +197,10 @@ span {
   margin-top: 6rem !important;
 }
 
+.mgt-9 {
+  margin-top: 9rem !important;
+}
+
 .center-horizontally {
   display: flex;
   justify-content: center;
@@ -178,6 +209,34 @@ span {
 .center-vertically {
   display: flex;
   align-items: center;
+}
+
+.flex-column {
+  display: flex;
+  flex-direction: column;
+}
+
+.flex-column-center {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.button {
+  display: inline-block;
+  width: 19.6rem;
+  height: 4.8rem;
+  border-radius: 4rem;
+  background: #57b560;
+  border: none;
+  color: #fff;
+  text-align: center;
+  font-family: Circular Std;
+  font-size: 1.2rem;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+  letter-spacing: 0.12rem;
 }
 
 .thumbnail-grid {
@@ -257,6 +316,10 @@ span {
 }
 .vertical-tracks__song-title {
   font-size: 1.4rem;
+  margin-bottom: 0.2rem;
+}
+.vertical-tracks__song-title--image {
+  margin-bottom: 0.3rem;
 }
 .vertical-tracks__flex-container-botton {
   margin-top: 0.2rem;
@@ -268,12 +331,38 @@ span {
   height: 1.3rem !important;
   width: 1.3rem !important;
 }
+.vertical-tracks__download-icon--image {
+  margin-right: 0.3rem !important;
+}
 .vertical-tracks__artist {
   font-size: 1.1rem;
+  color: var(--color-gray-Shadowy);
 }
 .vertical-tracks__more-icon {
   width: 2rem !important;
   height: 2rem !important;
+}
+.vertical-tracks__more-icon--smaller {
+  width: 1.6rem !important;
+  height: 1.6rem !important;
+}
+.vertical-tracks--left-image {
+  display: flex;
+  align-items: center;
+}
+.vertical-tracks --right-image {
+  display: flex;
+  align-items: center;
+}
+.vertical-tracks--image {
+  margin-right: 1.2rem;
+  height: 4.8rem;
+  width: 4.8rem;
+}
+.vertical-tracks--Heart-icon {
+  height: 1.6rem;
+  width: 1.6rem;
+  margin-right: 3.2rem;
 }
 
 .main-nav {
@@ -303,7 +392,6 @@ span {
 }
 
 #page-album {
-  display: block;
   position: fixed;
   top: 0;
   left: 0;
@@ -314,10 +402,6 @@ span {
   width: 100%;
   padding-left: var(--page-margin);
   padding-right: var(--page-margin);
-}
-#page-album .flex-container-page {
-  display: flex;
-  flex-direction: column;
 }
 #page-album .icon-Back-arrow {
   width: 2rem;
@@ -337,18 +421,8 @@ span {
   border-radius: 50%;
   margin-right: 0.8rem;
 }
-#page-album .artist-container {
-  display: flex;
-  flex-direction: column;
-}
-#page-album .flex-container-icons {
-  display: flex;
-  align-items: center;
-}
 #page-album .flex-container-icon-placement {
-  display: flex;
   margin-left: auto;
-  align-items: center;
 }
 #page-album .icon-Heart-stroke {
   width: 2.6rem;
@@ -404,6 +478,29 @@ span {
   position: absolute;
   right: calc(var(--page-margin) * 2.2);
   top: 3rem;
+}
+
+#page-liked {
+  display: block;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: var(--color-likedSongs-gradientBG);
+}
+#page-liked .page-container {
+  width: 100%;
+  padding-left: var(--page-margin);
+  padding-right: var(--page-margin);
+}
+#page-liked .icon-Back-arrow {
+  width: 2rem;
+  height: 2rem;
+  display: inline-block;
+  position: absolute;
+  left: var(--page-margin);
+  top: 6rem;
 }
 
 /*# sourceMappingURL=style.css.map */

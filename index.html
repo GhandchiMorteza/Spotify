@@ -176,7 +176,7 @@
             <svg class="icon icon-Back-arrow">
               <use xlink:href="img/sprite.svg#icon-Back-arrow"></use>
             </svg>
-            <div class="flex-container-page">
+            <div class="flex-container-page flex-column">
               <div class="center-horizontally">
                 <img
                   src="img/albumPage/sampleAlbum.png"
@@ -186,7 +186,7 @@
               </div>
               <div class="flex-container-album">
                 <h1 class="primaryHeading mgb-1">Presence</h1>
-                <div class="artist-container">
+                <div class="artist-container flex-column">
                   <div class="center-vertically mgb-1">
                     <img
                       src="img/albumPage/artist.png"
@@ -197,7 +197,7 @@
                   </div>
                   <span class="album-year">Album . 2017</span>
                 </div>
-                <div class="flex-container-icons mgb-1">
+                <div class="flex-container-icons mgb-1 center-vertically">
                   <svg class="icon icon-Heart-stroke">
                     <use xlink:href="img/sprite.svg#icon-Heart-stroke"></use>
                   </svg>
@@ -207,7 +207,7 @@
                   <svg class="icon icon-More">
                     <use xlink:href="img/sprite.svg#icon-More"></use>
                   </svg>
-                  <div class="flex-container-icon-placement">
+                  <div class="flex-container-icon-placement center-vertically">
                     <svg class="icon icon-Play-circle">
                       <use xlink:href="img/sprite.svg#icon-Play-circle"></use>
                     </svg>
@@ -385,7 +385,372 @@
             </div>
           </div>
         </section>
-        <section id="page-liked" class="page page-liked"></section>
+        <section id="page-liked" class="page page-liked">
+          <div class="page-container">
+            <svg class="icon icon-Back-arrow">
+              <use xlink:href="img/sprite.svg#icon-Back-arrow"></use>
+            </svg>
+            <div class="flex-column-center mgt-9 mgb-13p6">
+              <h2 class="secondaryHeading mgb-2p5">Liked Songs</h2>
+              <button class="button">
+                <span class="button-text">SHUFFLE PLAY</span>
+              </button>
+            </div>
+            <div class="vertical-tracks">
+              <div class="vertical-tracks__item">
+                <div class="vertical-tracks--left-image">
+                  <img
+                    src="img/likedPage/Artwork.png"
+                    alt="track image"
+                    class="vertical-tracks--image"
+                  />
+                  <div class="vertical-tracks__flex-container-left">
+                    <span
+                      class="vertical-tracks__song-title vertical-tracks__song-title--image"
+                      >Creation Comes Alive</span
+                    >
+                    <div class="vertical-tracks__flex-container-botton">
+                      <svg
+                        class="icon icon-Download-stroke vertical-tracks__download-icon vertical-tracks__download-icon--image"
+                      >
+                        <use
+                          xlink:href="img/sprite.svg#icon-Download-green"
+                        ></use>
+                      </svg>
+                      <span class="vertical-tracks__artist"
+                        >Petit Biscuit, SONIA</span
+                      >
+                    </div>
+                  </div>
+                </div>
+                <div class="vertical-tracks--right-image">
+                  <svg
+                    class="icon icon-Heart-green vertical-tracks--Heart-icon"
+                  >
+                    <use xlink:href="img/sprite.svg#icon-Heart-green"></use>
+                  </svg>
+                  <svg
+                    class="icon icon-More vertical-tracks__more-icon--smaller"
+                  >
+                    <use xlink:href="img/sprite.svg#icon-More"></use>
+                  </svg>
+                </div>
+              </div>
+              <div class="vertical-tracks__item mgt-1p6">
+                <div class="vertical-tracks--left-image">
+                  <img
+                    src="img/likedPage/Artwork2.png"
+                    alt="track image"
+                    class="vertical-tracks--image"
+                  />
+                  <div class="vertical-tracks__flex-container-left">
+                    <span
+                      class="vertical-tracks__song-title vertical-tracks__song-title--image"
+                      >Creation Comes Alive</span
+                    >
+                    <div class="vertical-tracks__flex-container-botton">
+                      <svg
+                        class="icon icon-Download-stroke vertical-tracks__download-icon vertical-tracks__download-icon--image"
+                      >
+                        <use
+                          xlink:href="img/sprite.svg#icon-Download-green"
+                        ></use>
+                      </svg>
+                      <span class="vertical-tracks__artist"
+                        >Petit Biscuit, SONIA</span
+                      >
+                    </div>
+                  </div>
+                </div>
+                <div class="vertical-tracks--right-image">
+                  <svg
+                    class="icon icon-Heart-green vertical-tracks--Heart-icon"
+                  >
+                    <use xlink:href="img/sprite.svg#icon-Heart-green"></use>
+                  </svg>
+                  <svg
+                    class="icon icon-More vertical-tracks__more-icon--smaller"
+                  >
+                    <use xlink:href="img/sprite.svg#icon-More"></use>
+                  </svg>
+                </div>
+              </div>
+              <div class="vertical-tracks__item mgt-1p6">
+                <div class="vertical-tracks--left-image">
+                  <img
+                    src="img/likedPage/Artwork.png"
+                    alt="track image"
+                    class="vertical-tracks--image"
+                  />
+                  <div class="vertical-tracks__flex-container-left">
+                    <span
+                      class="vertical-tracks__song-title vertical-tracks__song-title--image"
+                      >Creation Comes Alive</span
+                    >
+                    <div class="vertical-tracks__flex-container-botton">
+                      <svg
+                        class="icon icon-Download-stroke vertical-tracks__download-icon vertical-tracks__download-icon--image"
+                      >
+                        <use
+                          xlink:href="img/sprite.svg#icon-Download-green"
+                        ></use>
+                      </svg>
+                      <span class="vertical-tracks__artist"
+                        >Petit Biscuit, SONIA</span
+                      >
+                    </div>
+                  </div>
+                </div>
+                <div class="vertical-tracks--right-image">
+                  <svg
+                    class="icon icon-Heart-green vertical-tracks--Heart-icon"
+                  >
+                    <use xlink:href="img/sprite.svg#icon-Heart-green"></use>
+                  </svg>
+                  <svg
+                    class="icon icon-More vertical-tracks__more-icon--smaller"
+                  >
+                    <use xlink:href="img/sprite.svg#icon-More"></use>
+                  </svg>
+                </div>
+              </div>
+              <div class="vertical-tracks__item mgt-1p6">
+                <div class="vertical-tracks--left-image">
+                  <img
+                    src="img/likedPage/Artwork2.png"
+                    alt="track image"
+                    class="vertical-tracks--image"
+                  />
+                  <div class="vertical-tracks__flex-container-left">
+                    <span
+                      class="vertical-tracks__song-title vertical-tracks__song-title--image"
+                      >Creation Comes Alive</span
+                    >
+                    <div class="vertical-tracks__flex-container-botton">
+                      <svg
+                        class="icon icon-Download-stroke vertical-tracks__download-icon vertical-tracks__download-icon--image"
+                      >
+                        <use
+                          xlink:href="img/sprite.svg#icon-Download-green"
+                        ></use>
+                      </svg>
+                      <span class="vertical-tracks__artist"
+                        >Petit Biscuit, SONIA</span
+                      >
+                    </div>
+                  </div>
+                </div>
+                <div class="vertical-tracks--right-image">
+                  <svg
+                    class="icon icon-Heart-green vertical-tracks--Heart-icon"
+                  >
+                    <use xlink:href="img/sprite.svg#icon-Heart-green"></use>
+                  </svg>
+                  <svg
+                    class="icon icon-More vertical-tracks__more-icon--smaller"
+                  >
+                    <use xlink:href="img/sprite.svg#icon-More"></use>
+                  </svg>
+                </div>
+              </div>
+              <div class="vertical-tracks__item mgt-1p6">
+                <div class="vertical-tracks--left-image">
+                  <img
+                    src="img/likedPage/Artwork.png"
+                    alt="track image"
+                    class="vertical-tracks--image"
+                  />
+                  <div class="vertical-tracks__flex-container-left">
+                    <span
+                      class="vertical-tracks__song-title vertical-tracks__song-title--image"
+                      >Creation Comes Alive</span
+                    >
+                    <div class="vertical-tracks__flex-container-botton">
+                      <svg
+                        class="icon icon-Download-stroke vertical-tracks__download-icon vertical-tracks__download-icon--image"
+                      >
+                        <use
+                          xlink:href="img/sprite.svg#icon-Download-green"
+                        ></use>
+                      </svg>
+                      <span class="vertical-tracks__artist"
+                        >Petit Biscuit, SONIA</span
+                      >
+                    </div>
+                  </div>
+                </div>
+                <div class="vertical-tracks--right-image">
+                  <svg
+                    class="icon icon-Heart-green vertical-tracks--Heart-icon"
+                  >
+                    <use xlink:href="img/sprite.svg#icon-Heart-green"></use>
+                  </svg>
+                  <svg
+                    class="icon icon-More vertical-tracks__more-icon--smaller"
+                  >
+                    <use xlink:href="img/sprite.svg#icon-More"></use>
+                  </svg>
+                </div>
+              </div>
+              <div class="vertical-tracks__item mgt-1p6">
+                <div class="vertical-tracks--left-image">
+                  <img
+                    src="img/likedPage/Artwork2.png"
+                    alt="track image"
+                    class="vertical-tracks--image"
+                  />
+                  <div class="vertical-tracks__flex-container-left">
+                    <span
+                      class="vertical-tracks__song-title vertical-tracks__song-title--image"
+                      >Creation Comes Alive</span
+                    >
+                    <div class="vertical-tracks__flex-container-botton">
+                      <svg
+                        class="icon icon-Download-stroke vertical-tracks__download-icon vertical-tracks__download-icon--image"
+                      >
+                        <use
+                          xlink:href="img/sprite.svg#icon-Download-green"
+                        ></use>
+                      </svg>
+                      <span class="vertical-tracks__artist"
+                        >Petit Biscuit, SONIA</span
+                      >
+                    </div>
+                  </div>
+                </div>
+                <div class="vertical-tracks--right-image">
+                  <svg
+                    class="icon icon-Heart-green vertical-tracks--Heart-icon"
+                  >
+                    <use xlink:href="img/sprite.svg#icon-Heart-green"></use>
+                  </svg>
+                  <svg
+                    class="icon icon-More vertical-tracks__more-icon--smaller"
+                  >
+                    <use xlink:href="img/sprite.svg#icon-More"></use>
+                  </svg>
+                </div>
+              </div>
+              <div class="vertical-tracks__item mgt-1p6">
+                <div class="vertical-tracks--left-image">
+                  <img
+                    src="img/likedPage/Artwork.png"
+                    alt="track image"
+                    class="vertical-tracks--image"
+                  />
+                  <div class="vertical-tracks__flex-container-left">
+                    <span
+                      class="vertical-tracks__song-title vertical-tracks__song-title--image"
+                      >Creation Comes Alive</span
+                    >
+                    <div class="vertical-tracks__flex-container-botton">
+                      <svg
+                        class="icon icon-Download-stroke vertical-tracks__download-icon vertical-tracks__download-icon--image"
+                      >
+                        <use
+                          xlink:href="img/sprite.svg#icon-Download-green"
+                        ></use>
+                      </svg>
+                      <span class="vertical-tracks__artist"
+                        >Petit Biscuit, SONIA</span
+                      >
+                    </div>
+                  </div>
+                </div>
+                <div class="vertical-tracks--right-image">
+                  <svg
+                    class="icon icon-Heart-green vertical-tracks--Heart-icon"
+                  >
+                    <use xlink:href="img/sprite.svg#icon-Heart-green"></use>
+                  </svg>
+                  <svg
+                    class="icon icon-More vertical-tracks__more-icon--smaller"
+                  >
+                    <use xlink:href="img/sprite.svg#icon-More"></use>
+                  </svg>
+                </div>
+              </div>
+              <div class="vertical-tracks__item mgt-1p6">
+                <div class="vertical-tracks--left-image">
+                  <img
+                    src="img/likedPage/Artwork2.png"
+                    alt="track image"
+                    class="vertical-tracks--image"
+                  />
+                  <div class="vertical-tracks__flex-container-left">
+                    <span
+                      class="vertical-tracks__song-title vertical-tracks__song-title--image"
+                      >Creation Comes Alive</span
+                    >
+                    <div class="vertical-tracks__flex-container-botton">
+                      <svg
+                        class="icon icon-Download-stroke vertical-tracks__download-icon vertical-tracks__download-icon--image"
+                      >
+                        <use
+                          xlink:href="img/sprite.svg#icon-Download-green"
+                        ></use>
+                      </svg>
+                      <span class="vertical-tracks__artist"
+                        >Petit Biscuit, SONIA</span
+                      >
+                    </div>
+                  </div>
+                </div>
+                <div class="vertical-tracks--right-image">
+                  <svg
+                    class="icon icon-Heart-green vertical-tracks--Heart-icon"
+                  >
+                    <use xlink:href="img/sprite.svg#icon-Heart-green"></use>
+                  </svg>
+                  <svg
+                    class="icon icon-More vertical-tracks__more-icon--smaller"
+                  >
+                    <use xlink:href="img/sprite.svg#icon-More"></use>
+                  </svg>
+                </div>
+              </div>
+              <div class="vertical-tracks__item mgt-1p6">
+                <div class="vertical-tracks--left-image">
+                  <img
+                    src="img/likedPage/Artwork.png"
+                    alt="track image"
+                    class="vertical-tracks--image"
+                  />
+                  <div class="vertical-tracks__flex-container-left">
+                    <span
+                      class="vertical-tracks__song-title vertical-tracks__song-title--image"
+                      >Creation Comes Alive</span
+                    >
+                    <div class="vertical-tracks__flex-container-botton">
+                      <svg
+                        class="icon icon-Download-stroke vertical-tracks__download-icon vertical-tracks__download-icon--image"
+                      >
+                        <use
+                          xlink:href="img/sprite.svg#icon-Download-green"
+                        ></use>
+                      </svg>
+                      <span class="vertical-tracks__artist"
+                        >Petit Biscuit, SONIA</span
+                      >
+                    </div>
+                  </div>
+                </div>
+                <div class="vertical-tracks--right-image">
+                  <svg
+                    class="icon icon-Heart-green vertical-tracks--Heart-icon"
+                  >
+                    <use xlink:href="img/sprite.svg#icon-Heart-green"></use>
+                  </svg>
+                  <svg
+                    class="icon icon-More vertical-tracks__more-icon--smaller"
+                  >
+                    <use xlink:href="img/sprite.svg#icon-More"></use>
+                  </svg>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
         <section id="page-artist" class="page page-artist"></section>
         <section id="page-player" class="page page-player"></section>
         <section id="page-library" class="page page-library"></section>

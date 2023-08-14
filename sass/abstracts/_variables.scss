@@ -21,10 +21,16 @@
     rgba(33, 71, 83, 1) 0,
     rgba(12, 12, 12, 1) 85%
   );
-  --color-likedSongs-gradientBG: linear-gradient(
-    180deg,
-    rgba(46, 28, 144, 0.75) 0%,
-    rgba(116, 115, 127, 0.75) 100%
+  // --color-likedSongs-gradientBG: linear-gradient(
+  //   circle at top center,
+  //   rgba(46, 28, 144, 0.75) 0%,
+  //   rgba(116, 115, 127, 0.75) 20%,
+  //   rgba(12, 12, 12, 1) 40%
+  // );
+  --color-likedSongs-gradientBG: radial-gradient(
+    circle at top center,
+    rgba(46, 28, 144, 0.75) -25rem,
+    rgba(12, 12, 12, 1) 35%
   );
 
   --font-primary: 'Circular Std', sans-serif;
