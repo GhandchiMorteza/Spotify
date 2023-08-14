@@ -1,0 +1,17 @@
+.play-shuffle-button {
+  display: flex;
+  align-items: center;
+
+  &--play {
+    width: 5.6rem;
+    height: 5.6rem;
+    position: relative;
+    top: -2rem;
+    right: -2rem;
+  }
+  &--shuffle {
+    width: 2rem;
+    height: 2rem;
+    z-index: 1;
+  }
+}

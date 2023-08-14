@@ -1,10 +1,11 @@
 .vertical-tracks {
   display: flex;
   flex-direction: column;
+
+  counter-reset: count;
+
   overflow-y: auto;
-
   scroll-snap-type: y mandatory;
-
   -ms-overflow-style: none;
   scrollbar-width: none;
   &::-webkit-scrollbar {
@@ -17,6 +18,16 @@
     align-items: center;
     flex-shrink: 0;
     scroll-snap-align: start;
+
+    &--numbered::before {
+      counter-increment: count;
+      content: counter(count);
+      display: inline-block;
+      position: absolute;
+      color: white;
+      font-size: 1.2rem;
+      font-weight: 400;
+    }
   }
 
   &__flex-container-left {
@@ -75,6 +86,10 @@
     margin-right: 1.2rem;
     height: 4.8rem;
     width: 4.8rem;
+
+    &--numbered {
+      margin-left: 2rem;
+    }
   }
 
   &--Heart-icon {
