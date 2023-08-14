@@ -1,9 +1,21 @@
+.mgb-1 {
+  margin-bottom: 1rem !important;
+}
+
 .mgb-1p5 {
   margin-bottom: 1.5rem !important;
 }
 
+.mgb-1p7 {
+  margin-bottom: 1.7rem !important;
+}
+
 .mgb-2p2 {
   margin-bottom: 2.2rem !important;
+}
+
+.mgt-3 {
+  margin-top: 3rem !important;
 }
 
 .mgt-3p3 {
@@ -14,6 +26,10 @@
   margin-top: 5.1rem !important;
 }
 
+.mgt-6 {
+  margin-top: 6rem !important;
+}
+
 .center-horizontally {
   display: flex;
   justify-content: center;
@@ -21,4 +37,5 @@
 
 .center-vertically {
   display: flex;
+  align-items: center;
 }

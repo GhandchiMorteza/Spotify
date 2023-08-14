@@ -1,0 +1,51 @@
+.vertical-tracks {
+  display: flex;
+  flex-direction: column;
+  overflow-y: auto;
+
+  scroll-snap-type: y mandatory;
+
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+  &::-webkit-scrollbar {
+    display: none;
+  }
+
+  &__item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-shrink: 0;
+    scroll-snap-align: start;
+  }
+
+  &__flex-container-left {
+    display: flex;
+    flex-direction: column;
+  }
+
+  &__song-title {
+    font-size: 1.4rem;
+  }
+
+  &__flex-container-botton {
+    margin-top: 0.2rem;
+    display: flex;
+    align-items: center;
+  }
+
+  &__download-icon {
+    margin-right: 0.8rem !important;
+    height: 1.3rem !important;
+    width: 1.3rem !important;
+  }
+
+  &__artist {
+    font-size: 1.1rem;
+  }
+
+  &__more-icon {
+    width: 2rem !important;
+    height: 2rem !important;
+  }
+}

@@ -12,10 +12,6 @@ html {
   box-sizing: border-box;
 }
 
-span {
-  font-weight: 400;
-}
-
 .page {
   display: none;
 }
@@ -33,4 +29,9 @@ span {
   flex-grow: 1;
   background-color: var(--color-primary-background);
   z-index: -2;
+}
+
+.icon {
+  width: 2.6rem;
+  height: 2.6rem;
 }

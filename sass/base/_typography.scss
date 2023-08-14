@@ -5,9 +5,21 @@ body {
   font-weight: 500;
 }
 
+.primaryHeading {
+  font-weight: 900;
+}
 .secondaryHeading {
   font-size: 2.07rem;
   font-weight: 700;
+}
+.ternaryHeading {
+  font-size: 1.1rem;
+  font-weight: 700;
+}
+
+span {
+  font-weight: 400;
+  font-size: 1rem;
 }
 
 .main-nav {
@@ -21,11 +33,16 @@ body {
   }
 }
 
-.ternaryHeading {
-  font-size: 1.1rem;
-  font-weight: 700;
-}
-
 .thumbnail-grid__title {
   font-size: 1.1rem;
+}
+
+#page-album {
+  .primaryHeading {
+    font-size: 1.8rem;
+    letter-spacing: -0.072rem;
+  }
+  .album-year {
+    font-size: 0.9rem;
+  }
 }

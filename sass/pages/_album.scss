@@ -1,4 +1,83 @@
 #page-album {
   display: block;
-  width: 100vw;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background: var(--color-album-gradientBG);
+
+  .page-container {
+    width: 100%;
+    padding-left: var(--page-margin);
+    padding-right: var(--page-margin);
+  }
+
+  .flex-container-page {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .icon-Back-arrow {
+    width: 2rem;
+    height: 2rem;
+    display: inline-block;
+    position: absolute;
+    left: var(--page-margin);
+    top: 6rem;
+  }
+
+  .album-image {
+    width: 27.2rem;
+    height: 27.2rem;
+  }
+
+  .artist-image {
+    width: 2rem;
+    height: 2rem;
+    border-radius: 50%;
+    margin-right: 0.8rem;
+  }
+
+  .artist-container {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .flex-container-icons {
+    display: flex;
+    align-items: center;
+  }
+
+  .flex-container-icon-placement {
+    display: flex;
+    margin-left: auto;
+    align-items: center;
+  }
+
+  .icon-Heart-stroke {
+    width: 2.6rem;
+    height: 2.6rem;
+    margin-right: 2.3rem;
+  }
+  .icon-Download-stroke {
+    width: 2.4rem;
+    height: 2.4rem;
+    margin-right: 2.3rem;
+  }
+  .icon-More {
+    width: 2.4rem;
+    height: 2.4rem;
+  }
+  .icon-Play-circle {
+    width: 5.6rem;
+    height: 5.6rem;
+    position: relative;
+    top: -2rem;
+    right: -2rem;
+  }
+  .icon-shuffle-circle {
+    width: 2rem;
+    height: 2rem;
+    z-index: 1;
+  }
 }

@@ -16,7 +16,11 @@
     rgba(46, 28, 144, 0.55) 0,
     rgba(12, 12, 12, 1) 45%
   );
-  --color-album-gradientBG: #337183;
+  --color-album-gradientBG: radial-gradient(
+    circle at top center,
+    rgba(33, 71, 83, 1) 0,
+    rgba(12, 12, 12, 1) 85%
+  );
   --color-likedSongs-gradientBG: linear-gradient(
     180deg,
     rgba(46, 28, 144, 0.75) 0%,
