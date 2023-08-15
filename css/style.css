@@ -37,6 +37,22 @@ $breakpoint arguement choices:
   --font-primary: "Circular Std", sans-serif;
   --page-margin: 1.6rem;
   --artist-image-height: 40.8rem;
+  --main-nav-height: 8.3rem;
+}
+@media (min-width: 20em) and (max-width: 30em) {
+  :root {
+    --artist-image-height: 37rem;
+  }
+}
+@media (min-width: 36em) {
+  :root {
+    --artist-image-height: 30rem;
+  }
+}
+@media (orientation: landscape) {
+  :root {
+    --main-nav-height: 6rem;
+  }
 }
 
 *,
@@ -61,12 +77,32 @@ html {
     font-size: 67.5%;
   }
 }
+@media (min-width: 36em) {
+  html {
+    font-size: 75%;
+  }
+}
+@media (min-width: 48em) {
+  html {
+    font-size: 87.5%;
+  }
+}
+@media (min-width: 62em) {
+  html {
+    font-size: 93.75%;
+  }
+}
+@media (min-width: 62em) {
+  html {
+    font-size: 100%;
+  }
+}
 
 .page {
   display: none;
   overflow-y: auto;
   overflow-x: hidden;
-  height: calc(100% - 8.3rem) !important;
+  height: calc(100% - var(--main-nav-height)) !important;
   -ms-overflow-style: none;
   scrollbar-width: none;
   position: fixed;
@@ -89,7 +125,7 @@ html {
   position: fixed;
   top: 0;
   left: 0;
-  width: 100vw; /* Make sure the container takes full width */
+  width: 100vw;
   height: 100vh;
   overflow: hidden;
 }
@@ -466,24 +502,35 @@ span {
   width: 1.4rem;
   height: 1.4rem;
   fill: white;
+  flex-shrink: 0;
 }
 
 .thumbnail-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(18.5rem, 1fr));
+  grid-template-columns: repeat(auto-fill, minmax(17.9rem, 1fr));
   gap: 0.8rem;
+}
+@media screen and (max-width: 25.9em) and (min-width: 21em) {
+  .thumbnail-grid {
+    grid-template-columns: repeat(auto-fill, minmax(15rem, 1fr));
+  }
 }
 .thumbnail-grid__item-box {
   border-radius: 0.4rem 0.4rem 0.4rem 0.4rem;
   display: flex;
   align-items: center;
   background-color: var(--color-box);
-  width: auto;
 }
 .thumbnail-grid__image {
   width: 5.6rem;
   height: 5.6rem;
   margin-right: 0.8rem;
+}
+@media (min-width: 75em) {
+  .thumbnail-grid__image {
+    width: 7rem;
+    height: 7rem;
+  }
 }
 
 .vertical-tracks {
@@ -586,7 +633,7 @@ span {
 
 .main-nav {
   width: 100vw;
-  height: 8.3rem;
+  height: var(--main-nav-height);
   flex: 0 0 auto;
 }
 .main-nav__flex-container {
@@ -605,6 +652,12 @@ span {
   width: 2.4rem;
   height: 2.4rem;
 }
+@media (orientation: landscape) {
+  .main-nav__icon {
+    width: 2rem;
+    height: 2rem;
+  }
+}
 .main-nav__text {
   display: block;
   line-height: normal;
@@ -612,6 +665,7 @@ span {
 
 #page-album {
   background: var(--color-primary-background);
+  padding-bottom: 2rem;
 }
 #page-album .page-container {
   width: 100%;
@@ -639,6 +693,18 @@ span {
 #page-album .album-image {
   width: 27.2rem;
   height: 27.2rem;
+}
+@media (min-width: 20em) and (max-width: 30em) {
+  #page-album .album-image {
+    width: 24rem;
+    height: 24rem;
+  }
+}
+@media (min-width: 0em) and (max-width: 20em) {
+  #page-album .album-image {
+    width: 19rem;
+    height: 19rem;
+  }
 }
 #page-album .artist-image {
   width: 2rem;
@@ -789,6 +855,14 @@ span {
   left: 0;
   z-index: -3;
 }
+#page-liked .button {
+  margin-bottom: 11rem;
+}
+@media (min-width: 0em) and (max-width: 30em) {
+  #page-liked .button {
+    margin-bottom: 8rem;
+  }
+}
 #page-liked .icon-Back-arrow {
   width: 2rem;
   height: 2rem;
@@ -800,6 +874,7 @@ span {
 
 #page-player {
   background: var(--color-primary-background);
+  height: 100% !important;
 }
 #page-player .page-container {
   width: 100%;
@@ -808,6 +883,11 @@ span {
 }
 #page-player .flex-top {
   justify-content: space-between;
+}
+@media (min-width: 62em) {
+  #page-player .flex-top {
+    margin-top: 2rem !important;
+  }
 }
 #page-player .flex-top .icon-More {
   height: 2.4rem;
@@ -825,14 +905,19 @@ span {
   margin-bottom: 6.58vh;
 }
 #page-player .img-container {
-  margin-top: 8.48vh;
+  margin-top: 7rem;
+}
+@media (orientation: landscape) {
+  #page-player .img-container {
+    margin-top: 2rem;
+  }
 }
 #page-player .rightside {
   margin-left: auto;
 }
 #page-player .buttons-player {
-  margin-top: 6.91vh;
-  margin-bottom: 4.68vh;
+  margin-top: 5rem;
+  margin-bottom: 4rem;
   justify-content: space-between;
 }
 #page-player .icon-shuffle-dot {
@@ -872,6 +957,7 @@ span {
   background: #191919;
 }
 #page-search .page-container {
+  margin-top: 10.7rem;
   width: 100%;
   padding-left: var(--page-margin);
   padding-right: var(--page-margin);

@@ -1,7 +1,12 @@
 .thumbnail-grid {
   display: grid;
 
-  grid-template-columns: repeat(auto-fill, minmax(18.5rem, 1fr));
+  grid-template-columns: repeat(auto-fill, minmax(17.9rem, 1fr));
+
+  @media screen and (max-width: 25.9em) and (min-width: 21em) {
+    grid-template-columns: repeat(auto-fill, minmax(15rem, 1fr));
+  }
+
   gap: 0.8rem;
 
   &__item-box {
@@ -9,11 +14,15 @@
     display: flex;
     align-items: center;
     background-color: var(--color-box);
-    width: auto;
   }
   &__image {
     width: 5.6rem;
     height: 5.6rem;
     margin-right: 0.8rem;
+    @include respond(xl) {
+      width: 7rem;
+      height: 7rem;
+    }
   }
+  // 1415px
 }

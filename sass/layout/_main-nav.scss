@@ -1,6 +1,8 @@
 .main-nav {
   width: 100vw;
-  height: 8.3rem;
+
+  height: var(--main-nav-height);
+
   flex: 0 0 auto;
 
   &__flex-container {
@@ -18,6 +20,10 @@
     margin: 0.5rem;
     width: 2.4rem;
     height: 2.4rem;
+    @media (orientation: landscape) {
+      width: 2rem;
+      height: 2rem;
+    }
   }
   &__text {
     display: block;

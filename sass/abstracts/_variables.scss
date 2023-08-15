@@ -38,4 +38,15 @@
   --page-margin: 1.6rem;
 
   --artist-image-height: 40.8rem;
+  @include respond-between(xxs, xs) {
+    --artist-image-height: 37rem;
+  }
+  @include respond(sm) {
+    --artist-image-height: 30rem;
+  }
+
+  --main-nav-height: 8.3rem;
+  @media (orientation: landscape) {
+    --main-nav-height: 6rem;
+  }
 }

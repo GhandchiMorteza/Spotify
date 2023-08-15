@@ -16,6 +16,13 @@
     }
   }
 
+  .button {
+    margin-bottom: 11rem;
+    @include respond-between(ze, xs) {
+      margin-bottom: 8rem;
+    }
+  }
+
   .icon-Back-arrow {
     width: 2rem;
     height: 2rem;

@@ -11,34 +11,36 @@ html {
   font-size: 62.5%; //1 rem = 10px; 10px/16px = 62.5%
   box-sizing: border-box;
 
-  @include respond-between(z, xxs) {
+  @include respond-between(ze, xxs) {
     font-size: 50%; //1 rem = 8px, 8/16 = 50%
   }
 
   @include respond(xs) {
-    font-size: 67.5%; //1rem = 10.8, 10.8/16
+    font-size: 67.5%; //1rem = 10.8px, 10.8/16
   }
 
-  // @include respond(tab-land) {
-  //   // width < 1200?
-  //   font-size: 56.25%; //1 rem = 9px, 9/16 = 50%
-  // }
+  @include respond(sm) {
+    font-size: 75%; //1rem = 12, 12/16
+  }
 
-  // @include respond(tab-port) {
-  //   // width < 900?
-  //   font-size: 50%; //1 rem = 8px, 8/16 = 50%
-  // }
+  @include respond(md) {
+    font-size: 87.5%; //1rem = 14, 14/16
+  }
 
-  // @include respond(big-desktop) {
-  //   font-size: 75%; //1rem = 12, 12/16
-  // }
+  @include respond(lg) {
+    font-size: 93.75%; //1rem = 15, 15/16
+  }
+
+  @include respond(lg) {
+    font-size: 100%; //1rem = 16, 16/16
+  }
 }
 
 .page {
   display: none;
   overflow-y: auto;
   overflow-x: hidden;
-  height: calc(100% - 8.3rem) !important;
+  height: calc(100% - var(--main-nav-height)) !important;
   -ms-overflow-style: none;
   scrollbar-width: none;
   &::-webkit-scrollbar {
@@ -49,9 +51,11 @@ html {
   left: 0;
   width: 100%;
 }
+
 #page-search {
   display: block;
 }
+
 .view-container {
   display: flex;
   justify-content: flex-end;
@@ -59,7 +63,7 @@ html {
   position: fixed;
   top: 0;
   left: 0;
-  width: 100vw; /* Make sure the container takes full width */
+  width: 100vw;
   height: 100vh;
   overflow: hidden;
 }

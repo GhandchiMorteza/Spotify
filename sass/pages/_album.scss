@@ -1,5 +1,6 @@
 #page-album {
   background: var(--color-primary-background);
+  padding-bottom: 2rem;
 
   .page-container {
     width: 100%;
@@ -30,6 +31,14 @@
   .album-image {
     width: 27.2rem;
     height: 27.2rem;
+    @include respond-between(xxs, xs) {
+      width: 24rem;
+      height: 24rem;
+    }
+    @include respond-between(ze, xxs) {
+      width: 19rem;
+      height: 19rem;
+    }
   }
 
   .artist-image {
