@@ -1,0 +1,86 @@
+#page-player {
+  display: block;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: var(--color-primary-background);
+
+  .page-container {
+    width: 100%;
+    padding-left: var(--page-margin);
+    padding-right: var(--page-margin);
+  }
+
+  .flex-top {
+    justify-content: space-between;
+
+    .icon-More {
+      height: 2.4rem;
+      width: 2.4rem;
+    }
+
+    .icon-Arrow-down {
+      height: 2.3rem;
+      width: 2.3rem;
+    }
+  }
+
+  .song-cover {
+    width: 100%;
+    height: 40.8vh;
+    object-fit: cover;
+    object-position: top center;
+    margin-bottom: 6.58vh;
+  }
+
+  .img-container {
+    margin-top: 8.48vh;
+  }
+
+  .rightside {
+    margin-left: auto;
+  }
+
+  .buttons-player {
+    margin-top: 6.91vh;
+    margin-bottom: 4.68vh;
+    justify-content: space-between;
+  }
+
+  .icon-shuffle-dot {
+    height: 3.2rem;
+    width: 2rem;
+  }
+
+  .icon-Previous,
+  .icon-Next {
+    height: 3.5rem;
+    width: 3.5rem;
+  }
+
+  .icon-Pause-circle {
+    width: 6.3rem;
+    height: 6.3rem;
+  }
+
+  .icon-Repeat {
+    height: 2.2rem;
+    width: 2.2rem;
+  }
+
+  .bttm-icon {
+    justify-content: space-between;
+  }
+
+  .icon-Devices,
+  .icon-Queue {
+    width: 1.9rem;
+    height: 1.9rem;
+  }
+
+  .secondaryHeading {
+    margin-bottom: 0.6rem;
+  }
+}

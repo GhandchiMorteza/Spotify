@@ -179,6 +179,10 @@ span {
   font-size: 1.6rem;
 }
 
+#page-player .flex-top .secondaryHeading {
+  font-size: 1.1rem;
+}
+
 .mgb-1 {
   margin-bottom: 1rem !important;
 }
@@ -247,8 +251,16 @@ span {
   margin-top: 6rem !important;
 }
 
+.mgt-6p3 {
+  margin-top: 6.3rem !important;
+}
+
 .mgt-7p2 {
   margin-top: 7.2rem !important;
+}
+
+.mgt-7p6 {
+  margin-top: 7.6rem !important;
 }
 
 .mgt-9 {
@@ -735,8 +747,79 @@ span {
   top: 6rem;
 }
 
-#page-search {
+#page-player {
   display: block;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: var(--color-primary-background);
+}
+#page-player .page-container {
+  width: 100%;
+  padding-left: var(--page-margin);
+  padding-right: var(--page-margin);
+}
+#page-player .flex-top {
+  justify-content: space-between;
+}
+#page-player .flex-top .icon-More {
+  height: 2.4rem;
+  width: 2.4rem;
+}
+#page-player .flex-top .icon-Arrow-down {
+  height: 2.3rem;
+  width: 2.3rem;
+}
+#page-player .song-cover {
+  width: 100%;
+  height: 40.8vh;
+  object-fit: cover;
+  object-position: top center;
+  margin-bottom: 6.58vh;
+}
+#page-player .img-container {
+  margin-top: 8.48vh;
+}
+#page-player .rightside {
+  margin-left: auto;
+}
+#page-player .buttons-player {
+  margin-top: 6.91vh;
+  margin-bottom: 4.68vh;
+  justify-content: space-between;
+}
+#page-player .icon-shuffle-dot {
+  height: 3.2rem;
+  width: 2rem;
+}
+#page-player .icon-Previous,
+#page-player .icon-Next {
+  height: 3.5rem;
+  width: 3.5rem;
+}
+#page-player .icon-Pause-circle {
+  width: 6.3rem;
+  height: 6.3rem;
+}
+#page-player .icon-Repeat {
+  height: 2.2rem;
+  width: 2.2rem;
+}
+#page-player .bttm-icon {
+  justify-content: space-between;
+}
+#page-player .icon-Devices,
+#page-player .icon-Queue {
+  width: 1.9rem;
+  height: 1.9rem;
+}
+#page-player .secondaryHeading {
+  margin-bottom: 0.6rem;
+}
+
+#page-search {
   position: fixed;
   top: 0;
   left: 0;
