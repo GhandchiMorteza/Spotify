@@ -72,3 +72,22 @@ span {
     font-size: 1.6rem;
   }
 }
+
+#page-library {
+  .secondaryHeading {
+    font-size: 3rem;
+  }
+  .podcasts {
+    color: var(--color-gray-dark);
+  }
+  .ternaryHeading {
+    font-size: 1.55rem;
+    color: var(--color-gray-dark);
+  }
+  .section-artists {
+    .ternaryHeading {
+      font-size: 1.5rem;
+      color: var(--color-primary-text);
+    }
+  }
+}

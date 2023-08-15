@@ -161,6 +161,21 @@ span {
   font-size: 1.6rem;
 }
 
+#page-library .secondaryHeading {
+  font-size: 3rem;
+}
+#page-library .podcasts {
+  color: var(--color-gray-dark);
+}
+#page-library .ternaryHeading {
+  font-size: 1.55rem;
+  color: var(--color-gray-dark);
+}
+#page-library .section-artists .ternaryHeading {
+  font-size: 1.5rem;
+  color: var(--color-primary-text);
+}
+
 .mgb-1 {
   margin-bottom: 1rem !important;
 }
@@ -177,6 +192,10 @@ span {
   margin-bottom: 2rem !important;
 }
 
+.mgb-2p1 {
+  margin-bottom: 2.1rem !important;
+}
+
 .mgb-2p2 {
   margin-bottom: 2.2rem !important;
 }
@@ -185,12 +204,20 @@ span {
   margin-bottom: 2.5rem !important;
 }
 
+.mgb-2p9 {
+  margin-bottom: 2.9rem !important;
+}
+
 .mgb-13p6 {
   margin-bottom: 13.6rem !important;
 }
 
 .mgt-1p6 {
   margin-top: 1.6rem !important;
+}
+
+.mgt-2p2 {
+  margin-top: 2.2rem !important;
 }
 
 .mgt-3 {
@@ -207,6 +234,10 @@ span {
 
 .mgt-6 {
   margin-top: 6rem !important;
+}
+
+.mgt-7p2 {
+  margin-top: 7.2rem !important;
 }
 
 .mgt-9 {
@@ -249,24 +280,6 @@ span {
   font-weight: 700;
   line-height: normal;
   letter-spacing: 0.12rem;
-}
-
-.thumbnail-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(18.5rem, 1fr));
-  gap: 0.8rem;
-}
-.thumbnail-grid__item-box {
-  border-radius: 0.4rem 0.4rem 0.4rem 0.4rem;
-  display: flex;
-  align-items: center;
-  background-color: var(--color-box);
-  width: auto;
-}
-.thumbnail-grid__image {
-  width: 5.6rem;
-  height: 5.6rem;
-  margin-right: 0.8rem;
 }
 
 .carousel {
@@ -319,6 +332,69 @@ span {
   width: 2rem;
   height: 2rem;
   z-index: 1;
+}
+
+.search-bar {
+  display: flex;
+  color: var(--color-gray-Shadowy) !important;
+}
+.search-bar::before {
+  content: "";
+  background-image: url("/img/SVG/Search.svg");
+  background-size: contain;
+  background-repeat: no-repeat;
+  width: 1.6rem;
+  height: 1.5rem;
+  position: absolute;
+  transform: translate(0.8rem, 1rem);
+}
+.search-bar__input {
+  flex-grow: 1;
+  padding-left: 3.5rem;
+  height: 3.6rem;
+  border-radius: 0.5rem;
+  border: none;
+  background: var(--color-primary-nav);
+  font-size: 1.15rem;
+  font-weight: 700;
+  letter-spacing: -0.023rem;
+  color: var(--color-gray-Shadowy) !important;
+  font-family: Circular Std;
+}
+.search-bar__btn {
+  margin-left: 0.8rem;
+  width: 6.4rem;
+  height: 3.6rem;
+  background: var(--color-primary-nav) !important;
+  font-family: Circular Std;
+  border: none;
+  border-radius: 0.5rem;
+  color: var(--color-gray-Shadowy);
+}
+.search-bar__btn-text {
+  font-family: Circular Std;
+  font-size: 1.15rem;
+  font-weight: 700;
+  letter-spacing: -0.023rem;
+  color: var(--color-gray-Shadowy) !important;
+}
+
+.thumbnail-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(18.5rem, 1fr));
+  gap: 0.8rem;
+}
+.thumbnail-grid__item-box {
+  border-radius: 0.4rem 0.4rem 0.4rem 0.4rem;
+  display: flex;
+  align-items: center;
+  background-color: var(--color-box);
+  width: auto;
+}
+.thumbnail-grid__image {
+  width: 5.6rem;
+  height: 5.6rem;
+  margin-right: 0.8rem;
 }
 
 .vertical-tracks {
@@ -401,6 +477,10 @@ span {
 .vertical-tracks--image--numbered {
   margin-left: 2rem;
 }
+.vertical-tracks--image--album {
+  width: 6.4rem;
+  height: 6.4rem;
+}
 .vertical-tracks--Heart-icon {
   height: 1.6rem;
   width: 1.6rem;
@@ -482,7 +562,6 @@ span {
 }
 
 #page-artist {
-  display: block;
   position: fixed;
   top: 0;
   left: 0;
@@ -564,6 +643,36 @@ span {
   position: absolute;
   right: calc(var(--page-margin) * 2.2);
   top: 3rem;
+}
+
+#page-library {
+  display: block;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+#page-library .page-container {
+  width: 100%;
+  padding-left: var(--page-margin);
+  padding-right: var(--page-margin);
+}
+#page-library .align-left {
+  display: flex;
+}
+#page-library .podcasts {
+  margin-left: 2.4rem;
+}
+#page-library .ternaryHeading {
+  margin-right: 3.1rem;
+}
+#page-library .artist-image {
+  width: 6.5rem;
+  height: 6.4rem;
+  object-fit: cover;
+  border-radius: 50%;
+  margin-right: 1.1rem;
 }
 
 #page-liked {
