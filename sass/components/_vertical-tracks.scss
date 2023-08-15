@@ -70,6 +70,11 @@
       width: 1.6rem !important;
       height: 1.6rem !important;
     }
+    &--cancel {
+      width: 1.5rem !important;
+      height: 1.5rem !important;
+      fill: var(--color-gray-Shadowy);
+    }
   }
 
   &--left-image {
@@ -94,6 +99,10 @@
     &--album {
       width: 6.4rem;
       height: 6.4rem;
+    }
+
+    &--radious {
+      border-radius: 50%;
     }
   }
 

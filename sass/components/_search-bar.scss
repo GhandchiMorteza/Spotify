@@ -9,7 +9,7 @@
     width: 1.6rem;
     height: 1.5rem;
     position: absolute;
-    transform: translate(0.8rem, 1rem);
+    transform: translateX(0.8rem);
   }
   &__input {
     flex-grow: 1;
@@ -21,8 +21,16 @@
     font-size: 1.15rem;
     font-weight: 700;
     letter-spacing: -0.023rem;
-    color: var(--color-gray-Shadowy) !important;
+    color: var(--color-gray-Shadowy);
     font-family: Circular Std;
+
+    &--m1 {
+      font-size: 1.45rem;
+      font-weight: 400;
+      color: var(--color-primary-text) !important;
+      border-radius: 0.8rem;
+      height: 2.8rem;
+    }
   }
   &__btn {
     margin-left: 0.8rem;
@@ -33,12 +41,28 @@
     border: none;
     border-radius: 0.5rem;
     color: var(--color-gray-Shadowy);
+
+    &--cancel {
+      background: none !important;
+    }
+
     &-text {
       font-family: Circular Std;
       font-size: 1.15rem;
       font-weight: 700;
       letter-spacing: -0.023rem;
       color: var(--color-gray-Shadowy) !important;
+      &--cancel {
+        font-size: 1.1rem;
+        color: var(--color-primary-text);
+      }
     }
+  }
+
+  &--camera {
+    display: inline-block;
+    width: 1.4rem;
+    height: 1.4rem;
+    fill: white;
   }
 }
