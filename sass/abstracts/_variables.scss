@@ -14,12 +14,12 @@
   --color-home-gradientBG: radial-gradient(
     circle at top left,
     rgba(46, 28, 144, 0.55) 0,
-    rgba(12, 12, 12, 1) 45%
+    var(--color-primary-background) 45%
   );
   --color-album-gradientBG: radial-gradient(
     circle at top center,
     rgba(33, 71, 83, 1) 0,
-    rgba(12, 12, 12, 1) 85%
+    var(--color-primary-background) 85%
   );
   // --color-likedSongs-gradientBG: linear-gradient(
   //   circle at top center,
@@ -30,7 +30,7 @@
   --color-likedSongs-gradientBG: radial-gradient(
     circle at top center,
     rgba(46, 28, 144, 0.75) -25rem,
-    rgba(12, 12, 12, 1) 35%
+    var(--color-primary-background) 35%
   );
 
   --font-primary: 'Circular Std', sans-serif;

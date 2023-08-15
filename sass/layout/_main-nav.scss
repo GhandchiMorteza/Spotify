@@ -1,7 +1,7 @@
 .main-nav {
-  height: min-max(min-content, 10.8vh);
   width: 100vw;
-  flex-shrink: 0;
+  height: 8.3rem;
+  flex: 0 0 auto;
 
   &__flex-container {
     height: 100%;

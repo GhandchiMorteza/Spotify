@@ -1,3 +1,15 @@
+/*
+
+$breakpoint arguement choices:
+- extra-small: 320px, xxs
+- very-small: 480px,  xs
+- mobile: 576px,      sm
+- tablet: 768px,      md
+- laptop: 992px,      lg
+- desktop: 1200px,    xl
+
+1em = 16px
+*/
 :root {
   --color-primary-text: #fff;
   --color-gray-Shadowy: #b3b3b3;
@@ -10,17 +22,17 @@
   --color-home-gradientBG: radial-gradient(
     circle at top left,
     rgba(46, 28, 144, 0.55) 0,
-    rgba(12, 12, 12, 1) 45%
+    var(--color-primary-background) 45%
   );
   --color-album-gradientBG: radial-gradient(
     circle at top center,
     rgba(33, 71, 83, 1) 0,
-    rgba(12, 12, 12, 1) 85%
+    var(--color-primary-background) 85%
   );
   --color-likedSongs-gradientBG: radial-gradient(
     circle at top center,
     rgba(46, 28, 144, 0.75) -25rem,
-    rgba(12, 12, 12, 1) 35%
+    var(--color-primary-background) 35%
   );
   --font-primary: "Circular Std", sans-serif;
   --page-margin: 1.6rem;
@@ -39,18 +51,47 @@ html {
   font-size: 62.5%;
   box-sizing: border-box;
 }
+@media (min-width: 0em) and (max-width: 20em) {
+  html {
+    font-size: 50%;
+  }
+}
+@media (min-width: 30em) {
+  html {
+    font-size: 67.5%;
+  }
+}
 
 .page {
   display: none;
+  overflow-y: auto;
+  overflow-x: hidden;
+  height: calc(100% - 8.3rem) !important;
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+}
+.page::-webkit-scrollbar {
+  display: none;
+}
+
+#page-search {
+  display: block;
 }
 
 .view-container {
   display: flex;
   justify-content: flex-end;
   flex-direction: column;
-  height: 100vh;
   position: fixed;
   top: 0;
+  left: 0;
+  width: 100vw; /* Make sure the container takes full width */
+  height: 100vh;
+  overflow: hidden;
 }
 
 .pages-container {
@@ -267,6 +308,10 @@ span {
   margin-top: 9rem !important;
 }
 
+.mgt-12 {
+  margin-top: 12rem !important;
+}
+
 .center-horizontally {
   display: flex;
   justify-content: center;
@@ -359,6 +404,7 @@ span {
 
 .search-bar {
   display: flex;
+  align-items: center;
   color: var(--color-gray-Shadowy) !important;
 }
 .search-bar::before {
@@ -539,9 +585,9 @@ span {
 }
 
 .main-nav {
-  height: min-max(min-content, 10.8vh);
   width: 100vw;
-  flex-shrink: 0;
+  height: 8.3rem;
+  flex: 0 0 auto;
 }
 .main-nav__flex-container {
   height: 100%;
@@ -565,16 +611,22 @@ span {
 }
 
 #page-album {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  background: var(--color-album-gradientBG);
+  background: var(--color-primary-background);
 }
 #page-album .page-container {
   width: 100%;
   padding-left: var(--page-margin);
   padding-right: var(--page-margin);
+}
+#page-album .page-container::before {
+  content: "";
+  height: 75rem;
+  width: 100vw;
+  background: var(--color-album-gradientBG);
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: -3;
 }
 #page-album .icon-Back-arrow {
   width: 2rem;
@@ -612,13 +664,6 @@ span {
   height: 2.4rem;
 }
 
-#page-artist {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-}
 #page-artist .page-container {
   width: 100%;
   padding-left: var(--page-margin);
@@ -668,16 +713,24 @@ span {
 }
 
 #page-home {
-  height: 100%;
-  background: var(--color-home-gradientBG);
+  background: var(--color-primary-background);
 }
 #page-home .home-container {
   height: 100%;
   display: flex;
   flex-direction: column;
-  justify-content: flex-end;
+  justify-content: flex-start;
   margin-left: var(--page-margin);
-  overflow-y: auto;
+}
+#page-home .home-container::before {
+  content: "";
+  height: 75rem;
+  width: 100vw;
+  background: var(--color-home-gradientBG);
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: -3;
 }
 
 .home-container > section {
@@ -696,13 +749,6 @@ span {
   top: 3rem;
 }
 
-#page-library {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-}
 #page-library .page-container {
   width: 100%;
   padding-left: var(--page-margin);
@@ -724,19 +770,24 @@ span {
   border-radius: 50%;
   margin-right: 1.1rem;
 }
-
-#page-liked {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background: var(--color-likedSongs-gradientBG);
+#page-library .section-artists {
+  display: none;
 }
+
 #page-liked .page-container {
   width: 100%;
   padding-left: var(--page-margin);
   padding-right: var(--page-margin);
+}
+#page-liked .page-container::before {
+  content: "";
+  height: 75rem;
+  width: 100vw;
+  background: var(--color-likedSongs-gradientBG);
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: -3;
 }
 #page-liked .icon-Back-arrow {
   width: 2rem;
@@ -748,12 +799,6 @@ span {
 }
 
 #page-player {
-  display: block;
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
   background: var(--color-primary-background);
 }
 #page-player .page-container {
@@ -819,14 +864,9 @@ span {
   margin-bottom: 0.6rem;
 }
 
-#page-search {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-}
 #page-search .search {
+  position: fixed;
+  width: 100%;
   padding: 5.2rem var(--page-margin) 3.8rem var(--page-margin);
   height: 8.8rem;
   background: #191919;

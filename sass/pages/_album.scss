@@ -1,15 +1,21 @@
 #page-album {
-  // display: block;
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  background: var(--color-album-gradientBG);
+  background: var(--color-primary-background);
 
   .page-container {
     width: 100%;
     padding-left: var(--page-margin);
     padding-right: var(--page-margin);
+
+    &::before {
+      content: '';
+      height: 75rem;
+      width: 100vw;
+      background: var(--color-album-gradientBG);
+      position: absolute;
+      top: 0;
+      left: 0;
+      z-index: -3;
+    }
   }
 
   .icon-Back-arrow {
