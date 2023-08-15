@@ -114,7 +114,7 @@ html {
   display: none;
 }
 
-#page-player {
+#page-home {
   display: block;
 }
 
@@ -338,6 +338,10 @@ span {
 
 .mgt-7p6 {
   margin-top: 7.6rem !important;
+}
+
+.mgt-8p3 {
+  margin-top: 8.3rem !important;
 }
 
 .mgt-9 {
