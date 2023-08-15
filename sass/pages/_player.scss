@@ -11,6 +11,9 @@
   .flex-top {
     justify-content: space-between;
 
+    @include respond(sm) {
+      margin-top: 4rem !important;
+    }
     @include respond(lg) {
       margin-top: 2rem !important;
     }
@@ -38,6 +41,9 @@
     margin-top: 7rem;
     @media (orientation: landscape) {
       margin-top: 2rem;
+    }
+    @include respond(sm) {
+      margin-top: 4rem;
     }
   }
 

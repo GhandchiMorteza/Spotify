@@ -114,7 +114,7 @@ html {
   display: none;
 }
 
-#page-search {
+#page-player {
   display: block;
 }
 
@@ -884,6 +884,11 @@ span {
 #page-player .flex-top {
   justify-content: space-between;
 }
+@media (min-width: 36em) {
+  #page-player .flex-top {
+    margin-top: 4rem !important;
+  }
+}
 @media (min-width: 62em) {
   #page-player .flex-top {
     margin-top: 2rem !important;
@@ -910,6 +915,11 @@ span {
 @media (orientation: landscape) {
   #page-player .img-container {
     margin-top: 2rem;
+  }
+}
+@media (min-width: 36em) {
+  #page-player .img-container {
+    margin-top: 4rem;
   }
 }
 #page-player .rightside {
