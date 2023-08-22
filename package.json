@@ -4,7 +4,7 @@
   "description": "Spotify app practice",
   "main": "index.js",
   "scripts": {
-    "watch:sass": "sass sass/main.scss css/style.css -w"
+    "watch:sass": "sass src/sass/main.scss dist/css/style.css -w"
   },
   "repository": {
     "type": "git",

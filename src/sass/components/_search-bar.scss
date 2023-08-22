@@ -4,7 +4,7 @@
   color: var(--color-gray-Shadowy) !important;
   &::before {
     content: '';
-    background-image: url('/img/SVG/Search.svg');
+    background-image: url('/src/img/SVG/Search.svg');
     background-size: contain;
     background-repeat: no-repeat;
     width: 1.6rem;
