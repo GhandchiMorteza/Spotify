@@ -3,7 +3,8 @@
 
   height: var(--main-nav-height);
 
-  flex: 0 0 auto;
+  position: fixed;
+  bottom: 0;
 
   &__flex-container {
     height: 100%;

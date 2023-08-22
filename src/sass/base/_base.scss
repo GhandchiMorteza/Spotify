@@ -57,15 +57,16 @@ html {
 }
 
 .view-container {
-  display: flex;
-  justify-content: flex-end;
-  flex-direction: column;
+  // display: flex;
+  // justify-content: flex-end;
+  // flex-direction: column;
   position: fixed;
   top: 0;
   left: 0;
   width: 100vw;
   height: 100vh;
   overflow: hidden;
+  background-color: var(--color-primary-background);
 }
 
 .pages-container {
