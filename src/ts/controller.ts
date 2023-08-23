@@ -1,3 +1,4 @@
-import * as jsonData from './json/data.json';
-console.log(jsonData);
-console.log('hello23456');
+import * as model from './model';
+import Router from './router';
+import albumView from './views/albumView';
+// import router from './router';
