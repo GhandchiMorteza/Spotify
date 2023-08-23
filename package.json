@@ -1,22 +1,19 @@
 {
   "name": "spotify",
   "version": "1.0.0",
-  "description": "Spotify app practice",
-  "main": "index.js",
-  "scripts": {
-    "watch:sass": "sass src/sass/main.scss dist/css/style.css -w"
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/GhandchiMorteza/Spotify.git"
-  },
+  "description": "",
   "author": "Morteza Ghandchi",
   "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/GhandchiMorteza/Spotify/issues"
+  "scripts": {
+    "start": "parcel index.html",
+    "build": "parcel build index.html"
   },
-  "homepage": "https://github.com/GhandchiMorteza/Spotify#readme",
+  "browserlist": "last 1 Chrome versions",
   "devDependencies": {
-    "sass": "^1.65.1"
+    "@parcel/packager-raw-url": "^2.9.3",
+    "@parcel/transformer-sass": "^2.9.3",
+    "@parcel/transformer-webmanifest": "^2.9.3",
+    "parcel": "^2.5.0",
+    "typescript": "^4.6.4"
   }
 }
