@@ -6,6 +6,15 @@
   position: fixed;
   bottom: 0;
 
+  &__navlink {
+    display: inline-flex;
+    flex-direction: column;
+    align-items: center;
+    flex-grow: 0;
+    color: inherit;
+    text-decoration: none;
+  }
+
   &__flex-container {
     height: 100%;
     background-color: var(--color-primary-nav);
@@ -27,7 +36,6 @@
     }
   }
   &__text {
-    display: block;
     line-height: normal;
   }
 }
