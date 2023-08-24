@@ -1,0 +1,91 @@
+[
+  {
+    "album": {
+      "id": "114701",
+      "album_name": "Emotion",
+      "album_composer": "Frozen Silence",
+      "album_genre": "Classical Crossover",
+      "album_thumb": "https://vmusic.ir/wp-content/uploads/2022/02/Frozen-Silence-Emotion-2022-225x225.jpg",
+      "album_url": "https://vmusic.ir/album/frozen-silence-emotion-2022/"
+    },
+    "musics": [
+      {
+        "id": 114760,
+        "track_name": "By the Sea",
+        "track_time": "1:27",
+        "track_url": "https://dl.vmusic.ir/2022/02/Frozen Silence - Emotion (2022)/128k/01) Frozen Silence - By the Sea.mp3",
+        "track_thumb": "https://vmusic.ir/wp-content/uploads/2022/02/Frozen-Silence-Emotion-2022-225x225.jpg",
+        "is_favorited": 0,
+        "like_status": "like",
+        "nonce": "7819dbac95"
+      },
+      {
+        "id": 114761,
+        "track_name": "Dive",
+        "track_time": "2:01",
+        "track_url": "https://dl.vmusic.ir/2022/02/Frozen Silence - Emotion (2022)/128k/02) Frozen Silence - Dive.mp3",
+        "track_thumb": "https://vmusic.ir/wp-content/uploads/2022/02/Frozen-Silence-Emotion-2022-225x225.jpg",
+        "is_favorited": 0,
+        "like_status": "like",
+        "nonce": "ee34c33edd"
+      }
+    ],
+    "length": 1
+  },
+  {
+    "album": {
+      "id": "113434",
+      "album_name": "Serenity",
+      "album_composer": "Chris Snelling",
+      "album_genre": "Modern Classical",
+      "album_thumb": "https://vmusic.ir/wp-content/uploads/2022/02/Chris-Snelling-Serenity-2022-225x225.jpg",
+      "album_url": "https://vmusic.ir/album/chris-snelling-serenity-2022/"
+    },
+    "musics": [
+      {
+        "id": 113438,
+        "track_name": "Until",
+        "track_time": "3:03",
+        "track_url": "https://dl.vmusic.ir/2022/02/Chris Snelling - Serenity (2022)/128k/02) Chris Snelling - Until.mp3",
+        "track_thumb": "https://vmusic.ir/wp-content/uploads/2022/02/Chris-Snelling-Serenity-2022-225x225.jpg",
+        "is_favorited": 0,
+        "like_status": "like",
+        "nonce": "6368d1afcb"
+      }
+    ],
+    "length": 1
+  },
+  {
+    "album": {
+      "id": "113260",
+      "album_name": "Yann Tiersen _ Eusa",
+      "album_composer": "Alessandro Simonetto, Yann Tiersen",
+      "album_genre": "Modern Classical",
+      "album_thumb": "https://vmusic.ir/wp-content/uploads/2022/02/Yann-Tiersen-Yann-Tiersen-_-Eusa-2022-225x225.jpg",
+      "album_url": "https://vmusic.ir/album/%db%8c%d8%a7%d9%86-%d8%aa%db%8c%d8%b1%d8%b3%d9%86-%db%8c%d9%88%d8%b3%d8%a7-%d8%a7%d9%84%d8%b3%d8%a7%d9%86%d8%af%d8%b1%d9%88-%d8%b3%db%8c%d9%85%d9%88%d9%86%d8%aa%d9%88/"
+    },
+    "musics": [
+      {
+        "id": 113263,
+        "track_name": "Eusa (Excerpts) No. 3, Lok Gweltaz",
+        "track_time": "3:16",
+        "track_url": "https://dl.vmusic.ir/2022/02/Yann Tiersen - Yann Tiersen _ Eusa (2022)/128k/01) Yann Tiersen - Eusa (Excerpts) No. 3, Lok Gweltaz.mp3",
+        "track_thumb": "https://vmusic.ir/wp-content/uploads/2022/02/Yann-Tiersen-Yann-Tiersen-_-Eusa-2022-225x225.jpg",
+        "is_favorited": 0,
+        "like_status": "like",
+        "nonce": "f6fe299189"
+      },
+      {
+        "id": 113264,
+        "track_name": "Eusa (Excerpts) No. 6, Yuzin",
+        "track_time": "2:01",
+        "track_url": "https://dl.vmusic.ir/2022/02/Yann Tiersen - Yann Tiersen _ Eusa (2022)/128k/02) Yann Tiersen - Eusa (Excerpts) No. 6, Yuzin.mp3",
+        "track_thumb": "https://vmusic.ir/wp-content/uploads/2022/02/Yann-Tiersen-Yann-Tiersen-_-Eusa-2022-225x225.jpg",
+        "is_favorited": 0,
+        "like_status": "like",
+        "nonce": "9907bc6ee2"
+      }
+    ],
+    "length": 1
+  }
+]
