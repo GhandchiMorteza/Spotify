@@ -4,14 +4,20 @@ import {
   Track,
   Album,
   PlayerConfiguration,
-  AppState,
 } from './Interfaces';
 
 export class ArtistClass implements Artist {
-  constructor(public name: string, public imageUrl: string) {}
+  static allArtists: Artist[] = [];
+  constructor(
+    public name: string,
+    public imageUrl: string = '../../img/artist.jpg'
+  ) {
+    ArtistClass.allArtists.push(this);
+  }
 }
 
 export class TrackClass implements Track {
+  static allTracks: Track[] = [];
   constructor(
     public id: string,
     public name: string,
@@ -21,8 +27,11 @@ export class TrackClass implements Track {
     public trackUrl: string,
     public albumId: string,
     public artistName: string,
-    public albumName: string
-  ) {}
+    public albumName: string,
+    public duration: string
+  ) {
+    TrackClass.allTracks.push(this);
+  }
 }
 
 export class AlbumClass implements Album {
@@ -33,7 +42,7 @@ export class AlbumClass implements Album {
     public thumbnailUrl: string,
     public isLiked: boolean,
     public tracks: Track[],
-    public albumGenres: AlbumGenreDictionary[]
+    public albumGenres: string[]
   ) {}
 }
 
@@ -45,3 +54,14 @@ export class PlayerConfigurationClass implements PlayerConfiguration {
     public playedFromPlaylist: Track[]
   ) {}
 }
+
+export const albumGenresDic: AlbumGenreDictionary = {
+  ['Classical Crossover']: 'Classical Crossover',
+  ['Modern Classical']: 'Modern Classical',
+  ['Classical']: 'Classical',
+  ['Instrumental']: 'Instrumental',
+  ['New Age']: 'New Age',
+  ['Epic']: 'Epic',
+  ['Modern Era']: 'Modern Era',
+  ['Meditation']: 'Meditation',
+};

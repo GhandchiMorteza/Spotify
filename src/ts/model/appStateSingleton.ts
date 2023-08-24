@@ -46,13 +46,6 @@ class AppStateClass implements AppState {
     return AppStateClass.instance;
   }
 
-  //     public id: string,
-  //     public name: string,
-  //     public artist: Artist,
-  //     public thumbnailUrl: string,
-  //     public isLiked: boolean,
-  //     public tracks: Track[],
-  //     public albumGenres: AlbumGenreDictionary[]
   addAlbum(
     id: string,
     name: string,
@@ -60,7 +53,7 @@ class AppStateClass implements AppState {
     thumbnailUrl: string,
     isLiked: boolean,
     tracks: Track[],
-    albumGenres: AlbumGenreDictionary[]
+    albumGenres: string[]
   ) {
     this.albums.push(
       new AlbumClass(

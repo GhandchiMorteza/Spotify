@@ -17,6 +17,7 @@ export interface Track {
   albumId: string;
   artistName: string;
   albumName: string;
+  duration: string;
 }
 
 export interface Album {
@@ -26,7 +27,7 @@ export interface Album {
   thumbnailUrl: string;
   isLiked: boolean;
   tracks: Track[];
-  albumGenres: AlbumGenreDictionary[];
+  albumGenres: string[];
 }
 
 export interface PlayerConfiguration {
