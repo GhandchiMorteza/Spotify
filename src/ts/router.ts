@@ -1,6 +1,6 @@
-//main-nav__navlink
 const Router = {
   init: () => {
+    // listener for main navigation icons
     const navLinks = document.querySelectorAll(
       'a.main-nav__navlink'
     ) as NodeListOf<HTMLAnchorElement>;
@@ -13,10 +13,12 @@ const Router = {
         }
       });
     });
+
     // Event Handler for URL changes
     window.addEventListener('popstate', (event) => {
       Router.go(event.state.route, false);
     });
+
     // Check the initial URL
     Router.go(location.pathname);
   },
@@ -28,31 +30,78 @@ const Router = {
     }
 
     let pageElement: HTMLElement;
-    // Make the Router reusable by receiving a collection of path as a regex and component to render
+
+    // Handling different route cases
     switch (route) {
       case '/':
-        let template = document.getElementById(
-          'page-home-template'
-        ) as HTMLTemplateElement;
-        let clone = document.importNode(template.content, true);
-        pageElement = clone.firstElementChild as HTMLElement;
+        // ...
+        break;
+      case '/home':
+        // ...
         break;
       case '/search':
-        pageElement = document.createElement('h1') as HTMLElement;
-        pageElement.textContent = 'Hello search!';
+        // ...
         break;
-      case '/library':
-        pageElement = document.createElement('h1') as HTMLElement;
-        pageElement.textContent = 'Hello library!';
+      case '/library/albums':
+        // ...
+        break;
+      case '/library/artists':
+        // ...
+        break;
+      case '/library/playlists':
+        // ...
+        break;
+      case '/library/playlists/liked-songs':
+        // ...
+        break;
+      case '/library/playlists/liked-albums':
+        // ...
         break;
       default:
-        pageElement = document.createElement('h1') as HTMLElement;
-        pageElement.textContent = "URL doesn't exist!";
-        break;
+        // Handle routes with IDs
+        if (route.startsWith('/album/')) {
+          const albumId = route.split('/album/')[1];
+          // Handle the album page using the albumId
+          break;
+        } else if (route.startsWith('/player/')) {
+          const playerId = route.split('/player/')[1];
+          // Handle the player page using the playerId
+          break;
+        } else if (route.startsWith('/artist/')) {
+          const artistId = route.split('/artist/')[1];
+          // Handle the artist page using the artistId
+          break;
+        } else {
+          // Handle "URL doesn't exist!"
+          break;
+        }
     }
-    const host = document.getElementById('pages-container');
-    host?.children[0].remove();
-    host?.insertAdjacentElement('afterbegin', pageElement);
+
+    // switch (route) {
+    //   case '/':
+    //     let template = document.getElementById(
+    //       'page-home-template'
+    //     ) as HTMLTemplateElement;
+    //     let clone = document.importNode(template.content, true);
+    //     pageElement = clone.firstElementChild as HTMLElement;
+    //     break;
+    //   case '/search':
+    //     pageElement = document.createElement('h1') as HTMLElement;
+    //     pageElement.textContent = 'Hello search!';
+    //     break;
+    //   case '/library':
+    //     pageElement = document.createElement('h1') as HTMLElement;
+    //     pageElement.textContent = 'Hello library!';
+    //     break;
+    //   default:
+    //     pageElement = document.createElement('h1') as HTMLElement;
+    //     pageElement.textContent = "URL doesn't exist!";
+    //     break;
+    // }
+    // const host = document.getElementById('pages-container');
+    // host?.children[0].remove();
+    // host?.insertAdjacentElement('afterbegin', pageElement);
+
     window.scrollX = 0;
     window.scrollY = 0;
   },

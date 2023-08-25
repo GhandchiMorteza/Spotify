@@ -1,11 +1,3 @@
-import {
-  Artist,
-  AlbumGenreDictionary,
-  Track,
-  Album,
-  PlayerConfiguration,
-} from './Interfaces';
-
 export class ArtistClass implements Artist {
   static allArtists: Artist[] = [];
   constructor(

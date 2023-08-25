@@ -5,14 +5,7 @@ import {
   PlayerConfigurationClass,
   albumGenresDic,
 } from './classes';
-import {
-  AppState,
-  Artist,
-  AlbumGenreDictionary,
-  Track,
-  Album,
-  PlayerConfiguration,
-} from './Interfaces';
+
 import AppStateClass from './appStateSingleton';
 import * as jsonData from '../../json/data.json';
 // import {API_URL} from './config';
@@ -20,8 +13,26 @@ import * as jsonData from '../../json/data.json';
 const appState = AppStateClass.getInstance();
 
 export function initAppState() {
+  (async () => {
+    if (navigator.storage && !(await navigator.storage.persisted())) {
+      const result = await navigator.storage.persist();
+      console.log(`Persisted storage granted: ${result}`);
+    }
+  })();
+
+  (async () => {
+    if (navigator.storage) {
+      const q = await navigator.storage.estimate();
+      if (q.quota && q.usage !== undefined) {
+        console.log(`Quota available: ${q.quota / 1024 / 1024} MiB`);
+        console.log(`Quota used: ${q.usage / 1024} KiB`);
+      }
+    }
+  })();
+
   readAlbumsFromJson();
   console.log(appState.albums);
+  console.log(ArtistClass.allArtists);
 }
 
 function readAlbumsFromJson() {
@@ -49,6 +60,7 @@ function readAlbumsFromJson() {
         )
       );
     }
+
     let genres: string[] = album.album_genre.split(', ');
     appState.addAlbum(
       album.id,

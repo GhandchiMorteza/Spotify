@@ -1,13 +1,13 @@
-export interface Artist {
+interface Artist {
   name: string;
   imageUrl: string;
 }
 
-export interface AlbumGenreDictionary {
+interface AlbumGenreDictionary {
   [genre: string]: string;
 }
 
-export interface Track {
+interface Track {
   id: string;
   name: string;
   thumbnailUrl: string;
@@ -20,7 +20,7 @@ export interface Track {
   duration: string;
 }
 
-export interface Album {
+interface Album {
   id: string;
   name: string;
   artist: Artist;
@@ -30,14 +30,14 @@ export interface Album {
   albumGenres: string[];
 }
 
-export interface PlayerConfiguration {
+interface PlayerConfiguration {
   currentPlaylist: Track[];
   shuffle: boolean;
   repeat: boolean;
   playedFromPlaylist: Track[];
 }
 
-export interface AppState {
+interface AppState {
   albums: Album[];
   likedTracks: Track[];
   likedAlbums: Album[];

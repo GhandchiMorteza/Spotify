@@ -5,7 +5,7 @@ import {
   Album,
   PlayerConfiguration,
   AppState,
-} from './Interfaces';
+} from './interfaces';
 import {
   ArtistClass,
   TrackClass,
