@@ -1,14 +1,9 @@
-var newCustomElement = document.createElement('custom-component');
-var newPageElement = document.createElement('page-component');
-
 export class ComponentClass<T extends HTMLElement, U extends HTMLElement>
-  extends HTMLElement
   implements Component<T, U>
 {
   templateElement: HTMLTemplateElement;
   hostElement: T;
   element: U;
-  // static : document.createElement("my-custom-element");
 
   constructor(
     templateId: string,
@@ -16,7 +11,6 @@ export class ComponentClass<T extends HTMLElement, U extends HTMLElement>
     public insertAtStart: boolean = true,
     newElementId?: string
   ) {
-    super();
     this.templateElement = document.getElementById(
       templateId
     )! as HTMLTemplateElement;
@@ -29,11 +23,6 @@ export class ComponentClass<T extends HTMLElement, U extends HTMLElement>
     if (newElementId) {
       this.element.id = newElementId;
     }
-    this.innerHTML = this.element.innerHTML;
-    this.render();
-  }
-
-  connectedCallback() {
     this.render();
   }
 
@@ -48,10 +37,8 @@ export class ComponentClass<T extends HTMLElement, U extends HTMLElement>
   render() {
     this.hostElement.insertAdjacentElement(
       this.insertAtStart ? 'afterbegin' : 'beforeend',
-      newCustomElement
+      this.element
     );
-    // this.constructor.tagName
-    // this.element = this.hostElement.querySelector('slot') as U;
   }
 }
 
@@ -67,13 +54,4 @@ export class PageClass<
   ) {
     super(templateId, hostId, insertAtStart, newElementId);
   }
-  override render() {
-    this.hostElement.insertAdjacentElement(
-      this.insertAtStart ? 'afterbegin' : 'beforeend',
-      newPageElement
-    );
-  }
 }
-
-customElements.define('custom-component', ComponentClass);
-customElements.define('page-component', PageClass);
