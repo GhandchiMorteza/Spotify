@@ -14,8 +14,8 @@
   <body>
     <div class="view-container">
       <main class="pages-container" id="pages-container">
-        <template></template>
-        <template id="page-home-template">
+        <div class="all-templates">
+        <template id="home">
           <section id="page-home" class="page page-home">
             <svg class="icon icon-Settings">
               <use xlink:href="src/img/sprite.svg#icon-Settings"></use>
@@ -250,7 +250,7 @@
             </div>
           </section>
         </template>
-        <template>
+        <template id="album">
         <section id="page-album" class="page page-album">
           <div class="page-container">
             <svg class="icon icon-Back-arrow">
@@ -470,7 +470,10 @@
               </div>
             </div>
           </div>
+        
         </section>
+        </template>
+        <template id="libraryplaylistsliked-songs">
         <section id="page-liked" class="page page-liked">
           <div class="page-container">
             <svg class="icon icon-Back-arrow">
@@ -837,6 +840,8 @@
             </div>
           </div>
         </section>
+        </template>
+        <template id="artist">
         <section id="page-artist" class="page page-artist">
           <div class="image-artist-container">
             <img
@@ -985,6 +990,8 @@
             </div>
           </div>
         </section>
+        </template>
+        <template id="libraryalbums">
         <section id="page-library" class="page page-library">
           <div class="page-container mgt-7p2">
             <section class="section-static">
@@ -1265,7 +1272,8 @@
             </section>
           </div>
         </section>
-
+        </template>
+        <template id="search">
         <section id="page-search" class="page page-search">
           <section class="search">
             <form class="search-form search-bar center-vertically" action="#">
@@ -1486,7 +1494,8 @@
 
           </div>
         </section>
-
+        </template>
+        <template id="player">
         <section id="page-player" class="page page-player">
           <div class="page-container">
             <div class="center-vertically flex-top mgt-6p3">
@@ -1549,6 +1558,7 @@
         
         </section>
         </template>
+      </div>
       </main>
       <nav class="main-nav">
         <div class="main-nav__flex-container">
@@ -1569,7 +1579,7 @@
             </a>
           </div>
           <div class="main-nav__item">
-            <a class="main-nav__navlink" href="/library">
+            <a class="main-nav__navlink" href="/library/albums">
               <svg class="icon icon-Library main-nav__icon">
                 <use xlink:href="src/img/sprite.svg#icon-Library"></use>
               </svg>

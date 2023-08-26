@@ -1,5 +1,7 @@
-export class ComponentClass<T extends HTMLElement, U extends HTMLElement>
-  implements Component<T, U>
+export abstract class ComponentClass<
+  T extends HTMLElement,
+  U extends HTMLElement
+> implements Component<T, U>
 {
   templateElement: HTMLTemplateElement;
   hostElement: T;
@@ -11,6 +13,7 @@ export class ComponentClass<T extends HTMLElement, U extends HTMLElement>
     public insertAtStart: boolean = true,
     newElementId?: string
   ) {
+    console.log(templateId);
     this.templateElement = document.getElementById(
       templateId
     )! as HTMLTemplateElement;
@@ -49,9 +52,15 @@ export class PageClass<
   constructor(
     templateId: string,
     hostId: string,
+    dataPage: string,
     public insertAtStart: boolean = true,
     newElementId?: string
   ) {
     super(templateId, hostId, insertAtStart, newElementId);
+    this.element.setAttribute('data-page', dataPage);
+  }
+  override render(): void {
+    this.element.classList.add('is-active');
+    super.render();
   }
 }

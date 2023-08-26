@@ -52,8 +52,8 @@ html {
   width: 100%;
 }
 
-#page-home {
-  display: block;
+.is-active {
+  display: block !important;
 }
 
 .view-container {
