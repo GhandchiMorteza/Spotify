@@ -4,35 +4,35 @@ import {
   AlbumClass,
   PlayerConfigurationClass,
   albumGenresDic,
-} from './classes';
+} from "./classes";
 
-import AppStateClass from './appStateSingleton';
-import * as jsonData from '../../json/data.json';
-// import {API_URL} from './config';
+import AppStateClass from "./appStateSingleton";
+import * as jsonData from "../../json/data.json";
+import { PageEnum } from "../config";
 
 const appState = AppStateClass.getInstance();
 
 export function initAppState() {
-  (async () => {
-    if (navigator.storage && !(await navigator.storage.persisted())) {
-      const result = await navigator.storage.persist();
-      console.log(`Persisted storage granted: ${result}`);
-    }
-  })();
+  // (async () => {
+  //   if (navigator.storage && !(await navigator.storage.persisted())) {
+  //     const result = await navigator.storage.persist();
+  //     console.log(`Persisted storage granted: ${result}`);
+  //   }
+  // })();
 
-  (async () => {
-    if (navigator.storage) {
-      const q = await navigator.storage.estimate();
-      if (q.quota && q.usage !== undefined) {
-        console.log(`Quota available: ${q.quota / 1024 / 1024} MiB`);
-        console.log(`Quota used: ${q.usage / 1024} KiB`);
-      }
-    }
-  })();
+  // (async () => {
+  //   if (navigator.storage) {
+  //     const q = await navigator.storage.estimate();
+  //     if (q.quota && q.usage !== undefined) {
+  //       console.log(`Quota available: ${q.quota / 1024 / 1024} MiB`);
+  //       console.log(`Quota used: ${q.usage / 1024} KiB`);
+  //     }
+  //   }
+  // })();
 
   readAlbumsFromJson();
-  console.log(appState.albums);
-  console.log(ArtistClass.allArtists);
+  // console.log(appState.albums);
+  // console.log(ArtistClass.allArtists);
 }
 
 function readAlbumsFromJson() {
@@ -61,7 +61,7 @@ function readAlbumsFromJson() {
       );
     }
 
-    let genres: string[] = album.album_genre.split(', ');
+    let genres: string[] = album.album_genre.split(", ");
     appState.addAlbum(
       album.id,
       album.album_name,
@@ -69,7 +69,38 @@ function readAlbumsFromJson() {
       album.album_thumb,
       false,
       tracks,
-      album.album_genre.split(', ')
+      album.album_genre.split(", ")
     );
+  }
+}
+
+export function getDataForPage(route: string): object | undefined {
+  switch (route) {
+    case PageEnum.home:
+    case "/":
+      return new Object(appState.albums);
+      break;
+    case PageEnum.search:
+      break;
+    case PageEnum.albums:
+      return new Object(appState.albums);
+      break;
+    case PageEnum.artists:
+      break;
+    case PageEnum.playlists:
+      break;
+    case PageEnum.likedSongs:
+      break;
+    case PageEnum.likedAlbums:
+      break;
+    case PageEnum.album:
+      break;
+    case PageEnum.player:
+      break;
+    case PageEnum.artist:
+      break;
+
+    default:
+      break;
   }
 }

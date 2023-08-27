@@ -1,17 +1,9 @@
 import {
-  Artist,
-  AlbumGenreDictionary,
-  Track,
-  Album,
-  PlayerConfiguration,
-  AppState,
-} from './interfaces';
-import {
   ArtistClass,
   TrackClass,
   AlbumClass,
   PlayerConfigurationClass,
-} from './classes';
+} from "./classes";
 
 class AppStateClass implements AppState {
   private static instance: AppStateClass | null = null;
