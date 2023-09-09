@@ -163,6 +163,8 @@ class ViewSingleton {
   }
 
   updatePageContent(route: string) {
+    console.log(route);
+
     switch (route) {
       case PageEnum.home:
       case "/":

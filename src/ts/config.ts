@@ -4,6 +4,7 @@ import artistImage from "url:../img/artist.jpg";
 export enum PageEnum {
   home = "/home",
   search = "/search",
+  library = "/library/",
   albums = "/library/albums",
   artists = "/library/artists",
   playlists = "/library/playlists",

@@ -51,10 +51,27 @@ class LibraryView {
   updateDOM(data: string) {
     this.deactivePreSubPage();
 
+    this.updateHeaders(data);
+
     const activeSubPage = document.getElementById(data.replace(/\//g, ""));
     if (activeSubPage) {
       activeSubPage.classList.add("active-library");
     }
+  }
+  updateHeaders(route: string) {
+    const headers = this.libraryNav.querySelectorAll("h3");
+
+    for (const header of headers) {
+      header.style.color = "rgb(127, 127, 127)";
+    }
+    console.log(route);
+
+    const header = this.libraryNav.querySelector(
+      `[data-route="${route}"]`
+    ) as HTMLElement;
+    console.log(header);
+
+    header.style.color = "#fff";
   }
   deactivePreSubPage() {
     const prevActiveSubPage =
