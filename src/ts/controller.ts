@@ -47,6 +47,9 @@ class Controller {
    * Set up event listeners for new page creation and navigation.
    */
   private setupEventListeners() {
+    document.addEventListener("click", (event) => {
+      console.log(event.composedPath());
+    });
     // Listen for a new page creation event.
     window.addEventListener("new-page-create", (event) => {
       const customEvent = event as CustomEvent;

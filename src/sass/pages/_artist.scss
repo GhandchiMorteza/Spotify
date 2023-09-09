@@ -12,6 +12,7 @@
     position: absolute;
     left: var(--page-margin);
     top: 6rem;
+    z-index: 2;
   }
 
   .image-artist {
@@ -33,7 +34,7 @@
     vertical-align: top;
     &::before {
       vertical-align: top;
-      content: '';
+      content: "";
       position: absolute;
       top: 0;
       left: 0;

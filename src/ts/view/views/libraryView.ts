@@ -64,12 +64,10 @@ class LibraryView {
     for (const header of headers) {
       header.style.color = "rgb(127, 127, 127)";
     }
-    console.log(route);
 
     const header = this.libraryNav.querySelector(
       `[data-route="${route}"]`
     ) as HTMLElement;
-    console.log(header);
 
     header.style.color = "#fff";
   }

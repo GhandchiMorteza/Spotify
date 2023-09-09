@@ -53,7 +53,6 @@ const Router = {
     let index = Router.historyStack.length - 2;
     while (index >= 0) {
       const state = Router.historyStack[index];
-      console.log(state);
 
       if (
         state &&

@@ -191,15 +191,15 @@ class PlayerView {
       window.dispatchEvent(event);
     });
 
-    this.backArrow.addEventListener("click", () => {
-      const event = new Event("goNonPlayer");
-      window.dispatchEvent(event);
+    // this.backArrow.addEventListener("click", () => {
+    //   const event = new Event("goNonPlayer");
+    //   window.dispatchEvent(event);
 
-      // if (!location.pathname.startsWith("/player")) {
-      //   // Navigate back to the previous page that is not a player page
+    //   // if (!location.pathname.startsWith("/player")) {
+    //   //   // Navigate back to the previous page that is not a player page
 
-      // }
-    });
+    //   // }
+    // });
   }
 
   repeatBtnHandler() {

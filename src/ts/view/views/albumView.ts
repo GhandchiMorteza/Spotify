@@ -49,10 +49,10 @@ class AlbumView {
 
       window.dispatchEvent(newEvent);
     });
-    this.backArrow.addEventListener("click", () => {
-      const event = new Event("goNonPlayer");
-      window.dispatchEvent(event);
-    });
+    // this.backArrow.addEventListener("click", () => {
+    //   const event = new Event("goNonPlayer");
+    //   window.dispatchEvent(event);
+    // });
   }
 }
 
