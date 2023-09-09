@@ -47,7 +47,6 @@ class Controller {
    * Set up event listeners for new page creation and navigation.
    */
   private setupEventListeners() {
-    document.addEventListener("click", (event) => {});
     // Listen for a new page creation event.
     window.addEventListener("new-page-create", (event) => {
       const customEvent = event as CustomEvent;
@@ -142,7 +141,6 @@ class Controller {
       const customEvent = event as CustomEvent;
       const itemUrl = customEvent.detail as string;
       const [_, page, id] = itemUrl.split("/");
-      console.log("play-inplace");
 
       PlayerConfigurationClass.updatePlaylist.call(Model.appState.playerConfig);
       View.renderPageElement(itemUrl, false);

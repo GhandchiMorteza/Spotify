@@ -58,14 +58,12 @@ export class PlayerConfigurationClass {
     });
     this.shuffledPlaylist = shuffleArray(this.currentPlaylist);
     this.currentIndex = index;
-    console.log("currentPlaylist:", this.currentPlaylist);
   }
   static updatePagePlaylist(this: PlayerConfigurationClass, tracks: Track[]) {
     this.currentPagePlaylist.splice(0, this.currentPagePlaylist.length);
     tracks.forEach((track) => {
       this.currentPagePlaylist.push(track.id);
     });
-    console.log("currentPagePlaylist:", this.currentPagePlaylist);
   }
   static getNextTrackId(
     this: PlayerConfigurationClass,

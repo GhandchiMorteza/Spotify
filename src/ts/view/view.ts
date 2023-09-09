@@ -276,11 +276,14 @@ class ViewSingleton {
     const backNav = pageELement.querySelector(".backnav") as HTMLElement;
 
     if (backNav) {
-      backNav.addEventListener("click", () => {
-        const event = new Event("goNonPlayer");
-        window.dispatchEvent(event);
-      });
+      backNav.removeEventListener("click", this.dispatchGoNonPlayer);
+
+      backNav.addEventListener("click", this.dispatchGoNonPlayer);
     }
+  }
+  dispatchGoNonPlayer() {
+    const event = new Event("goNonPlayer");
+    window.dispatchEvent(event);
   }
 }
 
