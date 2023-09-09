@@ -1,3 +1,6 @@
+// @ts-ignore
+import artistImage from "url:../img/artist.jpg";
+
 export enum PageEnum {
   home = "/home",
   search = "/search",
@@ -10,3 +13,6 @@ export enum PageEnum {
   player = "/player/",
   artist = "/artist/",
 }
+
+// Json file doesn't include aritst image, So I choose a default image
+export const DEFAULT_IMAGE = artistImage;

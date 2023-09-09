@@ -1,0 +1,52 @@
+.box-player {
+  position: fixed;
+  opacity: 97%;
+  bottom: calc(var(--main-nav-height) - 0.8rem);
+  background-color: #20211f;
+  z-index: 2;
+  padding: 0.6rem 0.7rem;
+  width: calc(100vw - (2 * var(--page-margin)));
+  margin: var(--page-margin);
+  border-radius: 0.5rem;
+  display: flex;
+  justify-content: space-between;
+
+  &__image {
+    width: 5rem;
+    height: 5rem;
+    border-radius: 0.5rem;
+  }
+  &__leftside {
+    display: flex;
+  }
+  &__texts {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+    margin-left: 1rem;
+  }
+  &__track-name {
+    font-size: 1.48rem;
+    font-weight: 900;
+    margin: 0.12rem;
+  }
+  &__artist-name {
+    font-size: 1.48rem;
+    font-weight: 400;
+    margin: 0.12rem;
+  }
+  &__rightside {
+    display: flex;
+    align-items: center;
+  }
+  &__leftside {
+    display: flex;
+    align-items: center;
+  }
+  .icon {
+    margin: 0.7rem;
+    width: 3.2rem;
+    height: 3.2rem;
+  }
+}

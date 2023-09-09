@@ -14,7 +14,10 @@
 </head>
 
 <body>
-  <div class="view-container">
+  <div class="view-container" id="view-container">
+
+
+
     <main class="pages-container" id="pages-container">
       <div class="all-templates">
         <template id="home">
@@ -68,21 +71,14 @@
               <section class="recently-played-section mgt-3p3">
                 <h2 class="secondaryHeading mgb-2p2">Recently played</h2>
                 <template class="ContainerClass" id="carouselOneContainerItmes">
-                  <div class="carousel">
-                    <div class="carousel__item--txt">
-                      <img class="carousel__image" src="src/img/124pxSample/Replace.png" alt="recently played album sample" />
-                      <span class="carousel__text">Study Beats</span>
-                    </div>
-                  </div>
+                  <div class="carousel"></div>
                 </template>
               </section>
 
               <section class="suggestion-section mgt-5p1">
                 <h2 class="secondaryHeading mgb-2p2">Made for You</h2>
                 <template class="ContainerClass" id="carouselTwoContainerItmes">
-                  <div class="carousel">
-                    <img class="carousel__item" src="src/img/166pxSample/Artwork2.png" alt="suggest album sample" />
-                  </div>
+                  <div class="carousel"></div>
                 </template>
               </section>
             </div>
@@ -96,16 +92,16 @@
               </svg>
               <div class="flex-container-page flex-column">
                 <div class="center-horizontally">
-                  <img src="src/img/albumPage/sampleAlbum.png" alt="album image" class="album-image mgb-1p7 mgt-6" />
+                  <img alt="album image" class="album-image mgb-1p7 mgt-6" />
                 </div>
                 <div class="flex-container-album">
                   <h1 class="primaryHeading mgb-1">Presence</h1>
                   <div class="artist-container flex-column">
                     <div class="center-vertically mgb-1">
-                      <img src="src/img/albumPage/artist.png" alt="artist image" class="artist-image" />
+                      <img alt="artist image" class="artist-image" />
                       <h3 class="ternaryHeading">Petit Biscuit</h3>
                     </div>
-                    <span class="album-year">Album . 2017</span>
+                    <span class="album-year">Album . 2022</span>
                   </div>
                   <div class="flex-container-icons mgb-1 center-vertically">
                     <svg class="icon icon-Heart-stroke">
@@ -118,66 +114,23 @@
                       <use xlink:href="src/img/sprite.svg#icon-More"></use>
                     </svg>
                     <div class="flex-container-icon-placement play-shuffle-button">
-                      <svg class="icon icon-Play-circle play-shuffle-button--play">
+                      <svg class="icon icon-Play-circle play-shuffle-button--play" id="play-album">
                         <use xlink:href="src/img/sprite.svg#icon-Play-circle"></use>
                       </svg>
-                      <svg class="icon icon-shuffle-circle play-shuffle-button--shuffle">
+                      <svg class="icon icon-shuffle-circle play-shuffle-button--shuffle" id="shuffle-album">
                         <use xlink:href="src/img/sprite.svg#icon-shuffle-circle"></use>
                       </svg>
                     </div>
                   </div>
                   <template class="ContainerClass" id="albumContainerItmes">
-                    <div class="vertical-tracks">
-                      <div class="vertical-tracks__item">
-                        <div class="vertical-tracks__flex-container-left">
-                          <span class="vertical-tracks__song-title">Creation Comes Alive</span>
-                          <div class="vertical-tracks__flex-container-botton">
-                            <svg class="icon icon-Download-stroke vertical-tracks__download-icon">
-                              <use xlink:href="src/img/sprite.svg#icon-Download-stroke"></use>
-                            </svg>
-                            <span class="vertical-tracks__artist">Petit Biscuit, SONIA</span>
-                          </div>
-                        </div>
-                        <svg class="icon icon-More vertical-tracks__more-icon">
-                          <use xlink:href="src/img/sprite.svg#icon-More"></use>
-                        </svg>
-                      </div>
-                      <div class="vertical-tracks__item mgt-3">
-                        <div class="vertical-tracks__flex-container-left">
-                          <span class="vertical-tracks__song-title">Creation Comes Alive</span>
-                          <div class="vertical-tracks__flex-container-botton">
-                            <svg class="icon icon-Download-stroke vertical-tracks__download-icon">
-                              <use xlink:href="src/img/sprite.svg#icon-Download-stroke"></use>
-                            </svg>
-                            <span class="vertical-tracks__artist">Petit Biscuit, SONIA</span>
-                          </div>
-                        </div>
-                        <svg class="icon icon-More vertical-tracks__more-icon">
-                          <use xlink:href="src/img/sprite.svg#icon-More"></use>
-                        </svg>
-                      </div>
-                      <div class="vertical-tracks__item mgt-3">
-                        <div class="vertical-tracks__flex-container-left">
-                          <span class="vertical-tracks__song-title">Creation Comes Alive</span>
-                          <div class="vertical-tracks__flex-container-botton">
-                            <svg class="icon icon-Download-stroke vertical-tracks__download-icon">
-                              <use xlink:href="src/img/sprite.svg#icon-Download-stroke"></use>
-                            </svg>
-                            <span class="vertical-tracks__artist">Petit Biscuit, SONIA</span>
-                          </div>
-                        </div>
-                        <svg class="icon icon-More vertical-tracks__more-icon">
-                          <use xlink:href="src/img/sprite.svg#icon-More"></use>
-                        </svg>
-                      </div>
-                    </div>
+                    <div class="vertical-tracks"></div>
                   </template>
                 </div>
               </div>
             </div>
           </section>
         </template>
-        <template id="libraryplaylistsliked">
+        <template id="libraryplaylistsliked-songs">
           <section id="page-liked" class="page page-liked">
             <div class="page-container">
               <svg class="icon icon-Back-arrow">
@@ -213,28 +166,6 @@
                       </svg>
                     </div>
                   </div>
-                  <div class="vertical-tracks__item mgt-1p6">
-                    <div class="vertical-tracks--left-image">
-                      <img src="src/img/likedPage/Artwork2.png" alt="track image" class="vertical-tracks--image" />
-                      <div class="vertical-tracks__flex-container-left">
-                        <span class="vertical-tracks__song-title vertical-tracks__song-title--image">Creation Comes Alive</span>
-                        <div class="vertical-tracks__flex-container-botton">
-                          <svg class="icon icon-Download-stroke vertical-tracks__download-icon vertical-tracks__download-icon--image">
-                            <use xlink:href="src/img/sprite.svg#icon-Download-green"></use>
-                          </svg>
-                          <span class="vertical-tracks__artist">Petit Biscuit, SONIA</span>
-                        </div>
-                      </div>
-                    </div>
-                    <div class="vertical-tracks--right-image">
-                      <svg class="icon icon-Heart-green vertical-tracks--Heart-icon">
-                        <use xlink:href="src/img/sprite.svg#icon-Heart-green"></use>
-                      </svg>
-                      <svg class="icon icon-More vertical-tracks__more-icon--smaller">
-                        <use xlink:href="src/img/sprite.svg#icon-More"></use>
-                      </svg>
-                    </div>
-                  </div>
                 </div>
                 <div></div>
               </template>
@@ -244,7 +175,7 @@
         <template id="artist">
           <section id="page-artist" class="page page-artist">
             <div class="image-artist-container">
-              <img class="image-artist" src="src/img/artistPage/artist.jpg" alt="Artist image" />
+              <img class="image-artist" alt="Artist image" />
               <h1 class="primaryHeading">Tycho</h1>
             </div>
             <div class="page-container">
@@ -261,41 +192,7 @@
               </div>
               <h2 class="secondaryHeading mgb-2">Popular</h2>
               <template class="ContainerClass" id="artistContainerItmes">
-                <div class="vertical-tracks">
-                  <div class="vertical-tracks__item vertical-tracks__item--numbered">
-                    <div class="vertical-tracks--left-image">
-                      <img src="src/img/likedPage/Artwork.png" alt="track image" class="vertical-tracks--image vertical-tracks--image--numbered" />
-                      <div class="vertical-tracks__flex-container-left vertical-tracks__flex-container-left">
-                        <span class="vertical-tracks__song-title vertical-tracks__song-title--image">Creation Comes Alive</span>
-                        <div class="vertical-tracks__flex-container-botton">
-                          <span class="vertical-tracks__artist">69,596,325</span>
-                        </div>
-                      </div>
-                    </div>
-                    <div class="vertical-tracks--right-image">
-                      <svg class="icon icon-More vertical-tracks__more-icon--smaller">
-                        <use xlink:href="src/img/sprite.svg#icon-More"></use>
-                      </svg>
-                    </div>
-                  </div>
-
-                  <div class="vertical-tracks__item vertical-tracks__item--numbered mgt-1p6">
-                    <div class="vertical-tracks--left-image">
-                      <img src="src/img/likedPage/Artwork.png" alt="track image" class="vertical-tracks--image vertical-tracks--image--numbered" />
-                      <div class="vertical-tracks__flex-container-left vertical-tracks__flex-container-left">
-                        <span class="vertical-tracks__song-title vertical-tracks__song-title--image">Creation Comes Alive</span>
-                        <div class="vertical-tracks__flex-container-botton">
-                          <span class="vertical-tracks__artist">69,596,325</span>
-                        </div>
-                      </div>
-                    </div>
-                    <div class="vertical-tracks--right-image">
-                      <svg class="icon icon-More vertical-tracks__more-icon--smaller">
-                        <use xlink:href="src/img/sprite.svg#icon-More"></use>
-                      </svg>
-                    </div>
-                  </div>
-                </div>
+                <div class="vertical-tracks"></div>
               </template>
             </div>
           </section>
@@ -309,74 +206,49 @@
                   <h2 class="secondaryHeading podcasts">Podcasts</h2>
                 </div>
                 <nav>
-                  <div class="align-left mgb-2p5 mgb-2p9">
-                    <h3 class="ternaryHeading">Playlists</h3>
-                    <h3 class="ternaryHeading">Artists</h3>
-                    <h3 class="ternaryHeading">Albums</h3>
+                  <div class="align-left mgb-2p5 mgb-2p9" id="libraryNav">
+                    <h3 class="ternaryHeading" data-route="/library/playlists">
+                      Playlists
+                    </h3>
+                    <h3 class="ternaryHeading" data-route="/library/artists">
+                      Artists
+                    </h3>
+                    <h3 class="ternaryHeading" data-route="/library/albums">
+                      Albums
+                    </h3>
                   </div>
                 </nav>
               </section>
 
-              <section class="section-albums">
-                <form class="search-form search-bar" action="#">
-                  <input type="text" class="search-bar__input" placeholder="Find in albums" />
-                  <button class="search-bar__btn" type="submit">
+              <section class="section-albums" id="libraryalbums">
+                <form class="search-form search-bar" action="#" id="findAlbumForm">
+                  <input type="text" class="search-bar__input" placeholder="Find in albums" id="filter-album" />
+                  <button class="search-bar__btn">
                     <span class="search-bar__btn-text">Filters</span>
                   </button>
                 </form>
                 <template class="ContainerClass" id="albumsContainerItmes">
-                  <div>
-                    <div class="vertical-tracks__item mgt-1p6">
-                      <div class="vertical-tracks--left-image">
-                        <img src="src/img/likedPage/Artwork.png" alt="track image" class="vertical-tracks--image vertical-tracks--image--album" />
-                        <div class="vertical-tracks__flex-container-left">
-                          <span class="vertical-tracks__song-title vertical-tracks__song-title">Creation Comes Alive</span>
-                          <div class="vertical-tracks__flex-container-botton">
-                            <span class="vertical-tracks__artist">Petit Biscuit, SONIA</span>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-
-                    <div class="vertical-tracks__item mgt-1p6">
-                      <div class="vertical-tracks--left-image">
-                        <img src="src/img/likedPage/Artwork.png" alt="track image" class="vertical-tracks--image vertical-tracks--image--album" />
-                        <div class="vertical-tracks__flex-container-left">
-                          <span class="vertical-tracks__song-title vertical-tracks__song-title">Creation Comes Alive</span>
-                          <div class="vertical-tracks__flex-container-botton">
-                            <span class="vertical-tracks__artist">Petit Biscuit, SONIA</span>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
+                  <div></div>
                 </template>
               </section>
 
-              <section class="section-artists">
-                <form class="search-form search-bar" action="#">
-                  <input type="text" class="search-bar__input" placeholder="Find in artists" />
-                  <button class="search-bar__btn" type="submit">
+              <section class="section-artists" id="libraryartists">
+                <form class="search-form search-bar" action="#" id="findArtistForm">
+                  <input type="text" class="search-bar__input" placeholder="Find in artists" id="filter-artist" />
+                  <button class="search-bar__btn">
                     <span class="search-bar__btn-text">Filters</span>
                   </button>
                 </form>
                 <template class="ContainerClass" id="artistsContainerItmes">
-                  <div>
-                    <div class="center-vertically mgt-1p6">
-                      <img src="src/img/artistPage/artist.jpg" alt="artist image" class="artist-image" />
-                      <h3 class="ternaryHeading artist-name">
-                        Petit Biscuit
-                      </h3>
-                    </div>
-
-                    <div class="center-vertically mgt-1p6">
-                      <img src="src/img/artistPage/artist.jpg" alt="artist image" class="artist-image" />
-                      <h3 class="ternaryHeading artist-name">
-                        Petit Biscuit
-                      </h3>
-                    </div>
-                  </div>
+                  <div></div>
                 </template>
+              </section>
+
+              <section class="section-playlists" id="libraryplaylists">
+                <div class="item" data-route="/library/playlists/liked-songs" id="itemLikedSong">
+                  <div class="box"></div>
+                  <h3>Liked Songs</h3>
+                </div>
               </section>
             </div>
           </section>
@@ -384,8 +256,8 @@
         <template id="search">
           <section id="page-search" class="page page-search">
             <section class="search">
-              <form class="search-form search-bar center-vertically" action="#">
-                <input type="text" class="search-bar__input search-bar__input--m1" placeholder="Search" />
+              <form class="search-form search-bar center-vertically" action="#" id="formSearchGeneral">
+                <input type="text" class="search-bar__input search-bar__input--m1" placeholder="Search" id="searchGeneral" />
                 <button class="search-bar__btn search-bar__btn--cancel" type="reset">
                   <span class="search-bar__btn-text--cancel">Cancel</span>
                 </button>
@@ -395,44 +267,34 @@
               </form>
             </section>
             <div class="page-container">
-              <h2 class="secondaryHeading">Recent searches</h2>
-              <template class="ContainerClass" id="SearchPageContainerItmes">
-                <div class="vertical-tracks mgt-1p9">
-                  <div class="vertical-tracks__item">
-                    <div class="vertical-tracks--left-image">
-                      <img src="src/img/likedPage/Artwork.png" alt="track image" class="vertical-tracks--image" />
-                      <div class="vertical-tracks__flex-container-left">
-                        <span class="vertical-tracks__song-title">Creation Comes Alive</span>
-                        <div class="vertical-tracks__flex-container-botton">
-                          <span class="vertical-tracks__artist">Petit Biscuit, SONIA</span>
-                        </div>
-                      </div>
-                    </div>
-                    <div class="vertical-tracks--right-image">
-                      <svg class="icon icon-Close vertical-tracks__more-icon--cancel">
-                        <use xlink:href="src/img/sprite.svg#icon-Close"></use>
-                      </svg>
-                    </div>
-                  </div>
+              <section id="recent-section">
+                <h2 class="secondaryHeading">Recent searches</h2>
+                <template class="ContainerClass" id="RecentSearchContainerItmes" class="SearchPageContainerItmes">
+                  <div class="vertical-tracks mgt-1p9">
 
-                  <div class="vertical-tracks__item mgt-1p7">
-                    <div class="vertical-tracks--left-image">
-                      <img src="src/img/likedPage/Artwork.png" alt="track image" class="vertical-tracks--image vertical-tracks--image--radious" />
-                      <div class="vertical-tracks__flex-container-left">
-                        <span class="vertical-tracks__song-title">Creation Comes Alive</span>
-                        <div class="vertical-tracks__flex-container-botton">
-                          <span class="vertical-tracks__artist">Petit Biscuit, SONIA</span>
+                  </div>
+                </template>
+              </section>
+
+              <section id="search-results" class="search-results">
+                <template class="ContainerClass" id="SearchResultsContainerItmes" class="SearchPageContainerItmes">
+                  <div class="vertical-tracks mgt-1p9">
+                    <div class="vertical-tracks__item">
+                      <div class="vertical-tracks--left-image">
+                        <img src="src/img/likedPage/Artwork.png" alt="track image" class="vertical-tracks--image" />
+                        <div class="vertical-tracks__flex-container-left">
+                          <span class="vertical-tracks__song-title">Creation Comes Alive</span>
+                          <div class="vertical-tracks__flex-container-botton">
+                            <span class="vertical-tracks__artist">Petit Biscuit, SONIA</span>
+                          </div>
                         </div>
                       </div>
                     </div>
-                    <div class="vertical-tracks--right-image">
-                      <svg class="icon icon-Close vertical-tracks__more-icon--cancel">
-                        <use xlink:href="src/img/sprite.svg#icon-Close"></use>
-                      </svg>
-                    </div>
+
                   </div>
-                </div>
-              </template>
+                </template>
+              </section>
+
             </div>
           </section>
         </template>
@@ -450,11 +312,13 @@
               </div>
 
               <div class="center-horizontally img-container">
-                <img class="song-cover" src="src/img/artistPage/artist.jpg" alt="songcover" />
+                <img class="song-cover" alt="songcover" />
               </div>
               <div class="flex-bottom center-vertically">
                 <div class="leftside flex-column">
-                  <h2 class="secondaryHeading">Only U (Real Quick)</h2>
+                  <h2 class="secondaryHeading songName">
+                    Only U (Real Quick)
+                  </h2>
                   <span class="artist-text">Ownglow</span>
                 </div>
                 <div class="rightside">
@@ -463,29 +327,64 @@
                   </svg>
                 </div>
               </div>
-              <div class="center-vertically buttons-player">
-                <svg class="icon icon-shuffle-dot">
+
+              <div class="progress-container" id="progress-container">
+                <div class="progress" id="progress"></div>
+              </div>
+              <audio id="audio"></audio>
+              <div class="time-holder">
+                <span class="current-time" id="currentTime"></span><span class="remaining-time" id="remainingTime"></span>
+              </div>
+
+              <div class="center-vertically buttons-player navigation-player">
+                <svg class="icon icon-shuffle-dot" id="shuffle">
                   <use xlink:href="src/img/sprite.svg#icon-shuffle-dot"></use>
                 </svg>
-                <svg class="icon icon-Previous">
+                <svg class="icon icon-Previous" id="prev">
                   <use xlink:href="src/img/sprite.svg#icon-Previous"></use>
                 </svg>
-                <svg class="icon icon-Pause-circle">
-                  <use xlink:href="src/img/sprite.svg#icon-Pause-circle"></use>
+                <svg class="icon icon-Play-circle-white play-pause" id="play">
+                  <use xlink:href="src/img/sprite.svg#icon-Play-circle-white"></use>
                 </svg>
-                <svg class="icon icon-Next">
+
+                <svg class="icon icon-Next" id="next">
                   <use xlink:href="src/img/sprite.svg#icon-Next"></use>
                 </svg>
-                <svg class="icon icon-Repeat">
+                <svg class="icon icon-Repeat" id="repeat">
                   <use xlink:href="src/img/sprite.svg#icon-Repeat"></use>
                 </svg>
               </div>
+
               <div class="center-vertically bttm-icon">
                 <svg class="icon icon-Devices">
                   <use xlink:href="src/img/sprite.svg#icon-Devices"></use>
                 </svg>
                 <svg class="icon icon-Queue">
                   <use xlink:href="src/img/sprite.svg#icon-Queue"></use>
+                </svg>
+              </div>
+            </div>
+          </section>
+        </template>
+        <template id="play-box-template">
+          <section id="play-box-container">
+            <div id="box-player" class="box-player">
+
+              <div class="box-player__leftside">
+                <img src="https://vmusic.ir/wp-content/uploads/2022/02/Various-Artists-Romantic-Violin-2022-225x225.jpg" alt="track-image"
+                  class="box-player__image">
+                <div class="box-player__texts">
+                  <span class="box-player__track-name">track</span>
+                  <span class="box-player__artist-name">artist</span>
+                </div>
+              </div>
+
+              <div class="box-player__rightside">
+                <svg class="icon icon-Heart-stroke box-player__Heart" id="like-box">
+                  <use xlink:href="src/img/sprite.svg#icon-Heart-stroke"></use>
+                </svg>
+                <svg class="icon icon-Play-circle-white play-pause box-player__play-pause" id="play-box">
+                  <use xlink:href="src/img/sprite.svg#icon-Play-circle-white"></use>
                 </svg>
               </div>
             </div>

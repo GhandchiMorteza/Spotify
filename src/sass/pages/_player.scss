@@ -57,8 +57,9 @@
     justify-content: space-between;
   }
 
-  .icon-shuffle-dot {
-    height: 3.2rem;
+  .icon-shuffle-dot,
+  .icon-shuffle-dot-green {
+    height: 3.4rem;
     width: 2rem;
   }
 
@@ -68,12 +69,13 @@
     width: 3.5rem;
   }
 
-  .icon-Pause-circle {
+  .play-pause {
     width: 6.3rem;
     height: 6.3rem;
   }
 
-  .icon-Repeat {
+  .icon-Repeat,
+  .icon-Repeat-green {
     height: 2.2rem;
     width: 2.2rem;
   }
@@ -90,5 +92,32 @@
 
   .secondaryHeading {
     margin-bottom: 0.6rem;
+  }
+
+  .progress-container {
+    background-color: #474747;
+    border-radius: 5px;
+    cursor: pointer;
+    margin: 2rem 0 10px 0;
+    height: 4px;
+    width: 100%;
+  }
+
+  .progress {
+    background-color: #fff;
+    border-radius: 5px;
+    height: 100%;
+    width: 0%;
+    transition: width 0.1s linear;
+  }
+
+  .time-holder {
+    display: flex;
+    justify-content: space-between;
+    color: #bababa;
+    text-align: right;
+    font-family: Circular Std;
+    font-size: 1.1rem;
+    font-weight: 400;
   }
 }

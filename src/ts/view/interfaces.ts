@@ -1,4 +1,4 @@
-interface Component<T extends HTMLElement, U extends HTMLElement> {
+export interface Component<T extends HTMLElement, U extends HTMLElement> {
   templateElement: HTMLTemplateElement;
   hostElement: T;
   element: U;
@@ -30,19 +30,27 @@ interface ItemComponent<T extends HTMLElement, U extends HTMLElement>
   id: string;
 }
 
-interface ContainerComponent<T extends HTMLElement, U extends HTMLElement>
-  extends Component<T, U> {
+export interface ContainerComponent<
+  T extends HTMLElement,
+  U extends HTMLElement
+> extends Component<T, U> {
   /**
    * The item components of the container.
    */
-  items: ItemComponent<U, HTMLElement>[];
-  addItem(item: ItemComponent<U, HTMLElement>): void;
-  removeItem(id: string): void;
+  addItems(item: ItemComponent<U, HTMLElement>): void;
+  addItem(itemData: any): void;
+  // removeItem(id: string): void;
   /**
    * Filters the items in the container by the specified filter function.
    *
    * @param filter The filter function to use.
    * @returns void
    */
-  filterItems(filter: (item: ItemComponent<U, HTMLElement>) => boolean): void;
+  // filterItems(filter: (item: ItemComponent<U, HTMLElement>) => boolean): void;
+}
+
+export enum NextStatus {
+  Next,
+  Previous,
+  End,
 }

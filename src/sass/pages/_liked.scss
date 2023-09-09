@@ -5,7 +5,7 @@
     padding-right: var(--page-margin);
 
     &::before {
-      content: '';
+      content: "";
       height: 75rem;
       width: 100vw;
       background: var(--color-likedSongs-gradientBG);
@@ -30,5 +30,10 @@
     position: absolute;
     left: var(--page-margin);
     top: 6rem;
+  }
+
+  .iconDownload {
+    width: 1.3rem !important;
+    height: 1.3rem !important;
   }
 }

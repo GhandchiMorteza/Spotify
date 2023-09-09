@@ -34,6 +34,10 @@
   margin-bottom: 13.6rem !important;
 }
 
+.mgt-1p5 {
+  margin-top: 1.5rem !important;
+}
+
 .mgt-1p6 {
   margin-top: 1.6rem !important;
 }
@@ -109,4 +113,12 @@
   display: flex;
   flex-direction: column;
   align-items: center;
+}
+
+.display-none {
+  display: none;
+}
+
+.circle-radious {
+  border-radius: 50%;
 }

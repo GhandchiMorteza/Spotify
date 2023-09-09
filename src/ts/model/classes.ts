@@ -1,15 +1,18 @@
+import { DEFAULT_IMAGE } from "../config";
+import { shuffleArray } from "../helpers";
+import { NextStatus } from "../view/interfaces";
+
 export class ArtistClass implements Artist {
   static allArtists: Artist[] = [];
-  constructor(
-    public name: string,
-    public imageUrl: string = '../../img/artist.jpg'
-  ) {
+  static counter: number = 0;
+  public id: string;
+  constructor(public name: string, public imageUrl: string = DEFAULT_IMAGE) {
     ArtistClass.allArtists.push(this);
+    this.id = (++ArtistClass.counter + 4000).toString();
   }
 }
 
 export class TrackClass implements Track {
-  static allTracks: Track[] = [];
   constructor(
     public id: string,
     public name: string,
@@ -18,42 +21,81 @@ export class TrackClass implements Track {
     public isDownloaded: boolean,
     public trackUrl: string,
     public albumId: string,
-    public artistName: string,
-    public albumName: string,
     public duration: string
-  ) {
-    TrackClass.allTracks.push(this);
-  }
+  ) {}
 }
 
 export class AlbumClass implements Album {
   constructor(
     public id: string,
     public name: string,
-    public artist: Artist,
+    public artistIDs: string[],
     public thumbnailUrl: string,
     public isLiked: boolean,
     public tracks: Track[],
-    public albumGenres: string[]
+    public albumGenres: string[],
+    public isDownloaded: boolean
   ) {}
 }
 
-export class PlayerConfigurationClass implements PlayerConfiguration {
+export class PlayerConfigurationClass {
   constructor(
-    public currentPlaylist: Track[],
-    public shuffle: boolean,
-    public repeat: boolean,
-    public playedFromPlaylist: Track[]
+    public currentPlaylist: string[] = [],
+    public shuffledPlaylist: string[] = [],
+    public shuffle: boolean = false,
+    public repeat: boolean = false,
+    public currentIndex: number = 0
   ) {}
+  static updatePlaylist(
+    this: PlayerConfigurationClass,
+    tracks: Track[],
+    index: number = 0
+  ): void {
+    this.currentPlaylist.splice(0, this.currentPlaylist.length);
+    this.shuffledPlaylist.splice(0, this.shuffledPlaylist.length);
+    tracks.forEach((track) => {
+      this.currentPlaylist.push(track.id);
+    });
+    this.shuffledPlaylist = shuffleArray(this.currentPlaylist);
+    this.currentIndex = index;
+  }
+  static getNextTrackId(
+    this: PlayerConfigurationClass,
+    currentTrackId: string,
+    status: Number
+  ): string {
+    if (status == NextStatus.End && this.repeat) {
+      return currentTrackId;
+    }
+    this.currentIndex = this.shuffle
+      ? this.shuffledPlaylist.findIndex((trackId) => trackId === currentTrackId)
+      : this.currentPlaylist.findIndex((trackId) => trackId === currentTrackId);
+    if (status === NextStatus.Next || status === NextStatus.End) {
+      if (this.currentIndex > this.currentPlaylist.length - 2) {
+        this.currentIndex = 0;
+      } else {
+        this.currentIndex++;
+      }
+    } else {
+      if (this.currentIndex > 0) {
+        this.currentIndex--;
+      } else {
+        this.currentIndex = this.currentPlaylist.length - 1;
+      }
+    }
+    return this.shuffle
+      ? this.shuffledPlaylist[this.currentIndex]
+      : this.currentPlaylist[this.currentIndex];
+  }
 }
 
 export const albumGenresDic: AlbumGenreDictionary = {
-  ['Classical Crossover']: 'Classical Crossover',
-  ['Modern Classical']: 'Modern Classical',
-  ['Classical']: 'Classical',
-  ['Instrumental']: 'Instrumental',
-  ['New Age']: 'New Age',
-  ['Epic']: 'Epic',
-  ['Modern Era']: 'Modern Era',
-  ['Meditation']: 'Meditation',
+  ["Classical Crossover"]: "Classical Crossover",
+  ["Modern Classical"]: "Modern Classical",
+  ["Classical"]: "Classical",
+  ["Instrumental"]: "Instrumental",
+  ["New Age"]: "New Age",
+  ["Epic"]: "Epic",
+  ["Modern Era"]: "Modern Era",
+  ["Meditation"]: "Meditation",
 };

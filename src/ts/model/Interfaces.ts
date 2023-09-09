@@ -1,6 +1,7 @@
 interface Artist {
   name: string;
   imageUrl: string;
+  id: string;
 }
 
 interface AlbumGenreDictionary {
@@ -15,36 +16,67 @@ interface Track {
   isDownloaded: boolean;
   trackUrl: string;
   albumId: string;
-  artistName: string;
-  albumName: string;
   duration: string;
 }
 
 interface Album {
   id: string;
   name: string;
-  artist: Artist;
+  artistIDs: string[];
   thumbnailUrl: string;
   isLiked: boolean;
   tracks: Track[];
   albumGenres: string[];
+  isDownloaded: boolean;
 }
 
 interface PlayerConfiguration {
-  currentPlaylist: Track[];
+  // Array of track IDs
+  currentPlaylist: string[];
+  shuffledPlaylist: string[];
   shuffle: boolean;
   repeat: boolean;
-  playedFromPlaylist: Track[];
+  currentIndex: number;
 }
 
 interface AppState {
   albums: Album[];
-  likedTracks: Track[];
-  likedAlbums: Album[];
-  previouslyPlayedAlbums: Album[];
+  likedTracks: string[];
+  likedAlbums: string[];
+  previouslyPlayedAlbums: string[];
   playerConfig: PlayerConfiguration;
-  generalSearchResult: (Album | Track | Artist)[];
-  generalSearchRecentSelected: (Album | Track | Artist)[];
-  artistSearchResult: Artist[];
-  albumSearchResult: Album[];
+  generalSearchRecentSelected: [ItemType, string][];
 }
+
+interface AlbumItem {
+  id: string;
+  name: string;
+  image: string;
+  artistName: string;
+  isDownloaded: boolean;
+  isLiked: boolean;
+}
+
+interface TrackItem {
+  id: string;
+  name: string;
+  image: string;
+  artistName: string;
+  albumName: string;
+  isDownloaded: boolean;
+  isLiked: boolean;
+}
+
+interface ArtistItem {
+  id: string;
+  name: string;
+  image: string;
+}
+
+enum ItemType {
+  Album,
+  Track,
+  Artist,
+}
+
+type TypesItem = AlbumItem | TrackItem | ArtistItem;

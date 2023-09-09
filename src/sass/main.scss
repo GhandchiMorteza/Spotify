@@ -1,26 +1,27 @@
-@import 'abstracts/functions';
-@import 'abstracts/mixins';
-@import 'abstracts/variables';
+@import "abstracts/functions";
+@import "abstracts/mixins";
+@import "abstracts/variables";
 
-@import 'base/animations';
-@import 'base/base';
-@import 'base/font-face';
-@import 'base/typography';
-@import 'base/utilities';
+@import "base/animations";
+@import "base/base";
+@import "base/font-face";
+@import "base/typography";
+@import "base/utilities";
 
-@import 'components/button';
-@import 'components/carousel';
-@import 'components/play-shuffle-button';
-@import 'components/search-bar';
-@import 'components/thumbnail-grid';
-@import 'components/vertical-tracks';
+@import "components/box-player";
+@import "components/button";
+@import "components/carousel";
+@import "components/play-shuffle-button";
+@import "components/search-bar";
+@import "components/thumbnail-grid";
+@import "components/vertical-tracks";
 
-@import 'layout/main-nav';
+@import "layout/main-nav";
 
-@import 'pages/album';
-@import 'pages/artist';
-@import 'pages/home';
-@import 'pages/library';
-@import 'pages/liked';
-@import 'pages/player';
-@import 'pages/search';
+@import "pages/album";
+@import "pages/artist";
+@import "pages/home";
+@import "pages/library";
+@import "pages/liked";
+@import "pages/player";
+@import "pages/search";
