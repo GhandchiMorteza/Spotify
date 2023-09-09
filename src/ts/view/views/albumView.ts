@@ -3,6 +3,7 @@ class AlbumView {
   configured: Boolean = false;
   playAlbumBtn!: HTMLElement;
   shuffleAlbumBtn!: HTMLElement;
+  backArrow: any;
   private constructor() {}
   static getInstance() {
     if (!AlbumView.instance) {
@@ -33,21 +34,24 @@ class AlbumView {
       "#shuffle-album"
     ) as HTMLElement;
     // shuffleAlbumBtn.style.display = "none";
+    this.backArrow = parentElenent.querySelector(".icon-Back-arrow");
 
     image.src = data.image;
     artistImage.src = data.imageArtist;
     albumName.textContent = data.name;
     ternaryHeading.textContent = data.nameArtist;
 
-    if (!this.configured) {
-      this.configure();
-      this.configured = true;
-    }
+    this.configure();
   }
   configure() {
     this.playAlbumBtn.addEventListener("click", () => {
       const newEvent = new CustomEvent("play-album");
+
       window.dispatchEvent(newEvent);
+    });
+    this.backArrow.addEventListener("click", () => {
+      const event = new Event("goNonPlayer");
+      window.dispatchEvent(event);
     });
   }
 }

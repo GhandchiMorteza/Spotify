@@ -39,7 +39,6 @@ const Router = {
     // Update the URL
     if (addToHistory) {
       Router.historyStack.push({ route });
-      console.log(Router.historyStack);
 
       history.pushState({ route }, "", route);
     }
@@ -51,7 +50,7 @@ const Router = {
 
   // Go to the previous page that is not a player page
   GoPreviousNonPlayerPage: (): void => {
-    let index = Router.historyStack.length - 1;
+    let index = Router.historyStack.length - 2;
     while (index >= 0) {
       const state = Router.historyStack[index];
       console.log(state);
@@ -62,11 +61,12 @@ const Router = {
         !state.route.startsWith("/player")
       ) {
         Router.go(state.route, false);
-        return; // Exit the loop after navigating to the first non-player page
+        Router.historyStack.pop();
+        return;
       }
       index--;
     }
-    console.log("hello");
+    console.log("hich nabood");
   },
 };
 

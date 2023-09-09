@@ -69,7 +69,6 @@ export class ContainerClass<T extends HTMLElement, U extends HTMLElement>
             });
             window.dispatchEvent(customEvent);
           }
-          console.log(itemUrl?.split("/")[1]);
 
           if (
             itemUrl?.split("/")[1] === "player" &&

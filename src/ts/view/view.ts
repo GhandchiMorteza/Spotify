@@ -224,7 +224,6 @@ class ViewSingleton {
     for (const prevActivePage of prevActivePages) {
       prevActivePage.classList.remove("is-active");
     }
-    console.log("prevActivePage", prevActivePages);
 
     // Select element with data-page attribute starting with "/album/"
     const albumPageToRemove = document.querySelector('[data-page^="/album/"]');

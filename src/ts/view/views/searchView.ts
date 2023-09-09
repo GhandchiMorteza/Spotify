@@ -38,7 +38,6 @@ class SearchView {
     this.SearchCancelBtn.addEventListener("click", (event) => {
       event.preventDefault();
       this.Searchbar.value = "";
-      console.log(this.Searchbar.value);
 
       this.activateRecentSection();
     });
