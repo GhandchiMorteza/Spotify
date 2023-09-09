@@ -65,7 +65,6 @@ const Router = {
       }
       index--;
     }
-    console.log("hich nabood");
   },
 };
 

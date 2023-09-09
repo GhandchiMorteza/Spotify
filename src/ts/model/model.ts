@@ -13,9 +13,9 @@ import { ItemType } from "../helpers";
 export let appState = AppStateClass.getInstance();
 
 // Add an event listener to save app state before the page is unloaded
-window.addEventListener("beforeunload", () => {
-  updateAndSaveAppState();
-});
+// window.addEventListener("beforeunload", () => {
+//   updateAndSaveAppState();
+// });
 
 function updateAndSaveAppState() {
   // Serialize and save the updated appState
@@ -173,7 +173,7 @@ export function getDataForPage(route: string): object | undefined {
 
         if (album) {
           // Updating current playlist for player
-          PlayerConfigurationClass.updatePlaylist.call(
+          PlayerConfigurationClass.updatePagePlaylist.call(
             appState.playerConfig,
             album.tracks
           );
@@ -199,6 +199,7 @@ export function getDataForPage(route: string): object | undefined {
         const trackId = route.split(PageEnum.player)[1];
 
         // find track from ID in the Playlist
+        const playListPage = appState.playerConfig.currentPagePlaylist;
         const playList = appState.playerConfig.currentPlaylist;
         const trackIndex = playList.findIndex((trackID) => trackID === trackId);
 
@@ -212,11 +213,12 @@ export function getDataForPage(route: string): object | undefined {
         );
 
         // Updating current playlist
-        if (playList.length > 0 && trackIndex !== -1) {
-          PlayerConfigurationClass.updatePlaylist.call(
+        if (trackIndex === -1) {
+          PlayerConfigurationClass.updatePagePlaylist.call(
             appState.playerConfig,
             albumOfTrack!.tracks
           );
+          PlayerConfigurationClass.updatePlaylist.call(appState.playerConfig);
         }
 
         // Add played album to the previous played albums
@@ -267,7 +269,7 @@ export function getDataForPage(route: string): object | undefined {
         }
 
         // Updating current playlist for player
-        PlayerConfigurationClass.updatePlaylist.call(
+        PlayerConfigurationClass.updatePagePlaylist.call(
           appState.playerConfig,
           tracks
         );

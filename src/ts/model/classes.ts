@@ -44,20 +44,28 @@ export class PlayerConfigurationClass {
     public shuffledPlaylist: string[] = [],
     public shuffle: boolean = false,
     public repeat: boolean = false,
-    public currentIndex: number = 0
+    public currentIndex: number = 0,
+    public currentPagePlaylist: string[] = []
   ) {}
   static updatePlaylist(
     this: PlayerConfigurationClass,
-    tracks: Track[],
     index: number = 0
   ): void {
     this.currentPlaylist.splice(0, this.currentPlaylist.length);
     this.shuffledPlaylist.splice(0, this.shuffledPlaylist.length);
-    tracks.forEach((track) => {
-      this.currentPlaylist.push(track.id);
+    this.currentPagePlaylist.forEach((trackId) => {
+      this.currentPlaylist.push(trackId);
     });
     this.shuffledPlaylist = shuffleArray(this.currentPlaylist);
     this.currentIndex = index;
+    console.log("currentPlaylist:", this.currentPlaylist);
+  }
+  static updatePagePlaylist(this: PlayerConfigurationClass, tracks: Track[]) {
+    this.currentPagePlaylist.splice(0, this.currentPagePlaylist.length);
+    tracks.forEach((track) => {
+      this.currentPagePlaylist.push(track.id);
+    });
+    console.log("currentPagePlaylist:", this.currentPagePlaylist);
   }
   static getNextTrackId(
     this: PlayerConfigurationClass,

@@ -47,9 +47,7 @@ class Controller {
    * Set up event listeners for new page creation and navigation.
    */
   private setupEventListeners() {
-    document.addEventListener("click", (event) => {
-      console.log(event.composedPath());
-    });
+    document.addEventListener("click", (event) => {});
     // Listen for a new page creation event.
     window.addEventListener("new-page-create", (event) => {
       const customEvent = event as CustomEvent;
@@ -69,6 +67,7 @@ class Controller {
         Model.appState.playerConfig.repeat = true;
       }
     });
+
     window.addEventListener("shuffle-btn-pressed", () => {
       if (Model.appState.playerConfig.shuffle) {
         Model.appState.playerConfig.shuffle = false;
@@ -137,14 +136,15 @@ class Controller {
       AppStateClass.removeItemFromRecentSelected(Model.appState, type, id);
     });
 
-    window.addEventListener("play-album", (event) => {
-      console.log("hello play btn!");
-    });
+    window.addEventListener("play-album", (event) => {});
 
     window.addEventListener("play-inplace", (event) => {
       const customEvent = event as CustomEvent;
       const itemUrl = customEvent.detail as string;
       const [_, page, id] = itemUrl.split("/");
+      console.log("play-inplace");
+
+      PlayerConfigurationClass.updatePlaylist.call(Model.appState.playerConfig);
       View.renderPageElement(itemUrl, false);
     });
 
