@@ -168,6 +168,8 @@ class ViewSingleton {
       case "/":
         break;
       case PageEnum.search:
+        const searchView = SearchView.getInstance();
+        searchView.activateRecentSection();
         break;
       case PageEnum.albums:
         const libraryview = LibraryView.getInstance();

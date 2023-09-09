@@ -26,6 +26,7 @@ class PlayerView {
   playerBox!: PlayerBox;
   songId: any;
   histStack: string[] = [""];
+  backArrow!: HTMLElement;
 
   private constructor() {
     this.songStorage = new SongStorage();
@@ -55,6 +56,9 @@ class PlayerView {
     const albumName = parentElenent.querySelector(".songName") as HTMLElement;
     const artistName = parentElenent.querySelector(
       ".artist-text"
+    ) as HTMLElement;
+    this.backArrow = parentElenent.querySelector(
+      ".icon-Arrow-down"
     ) as HTMLElement;
 
     image.src = this.data.thumbnailUrl;
@@ -185,6 +189,16 @@ class PlayerView {
         },
       });
       window.dispatchEvent(event);
+    });
+
+    this.backArrow.addEventListener("click", () => {
+      const event = new Event("goNonPlayer");
+      window.dispatchEvent(event);
+
+      // if (!location.pathname.startsWith("/player")) {
+      //   // Navigate back to the previous page that is not a player page
+
+      // }
     });
   }
 

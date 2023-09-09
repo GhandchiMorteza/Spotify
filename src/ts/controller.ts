@@ -144,6 +144,10 @@ class Controller {
       const [_, page, id] = itemUrl.split("/");
       View.renderPageElement(itemUrl, false);
     });
+
+    window.addEventListener("goNonPlayer", (event) => {
+      Router.GoPreviousNonPlayerPage();
+    });
   }
 }
 

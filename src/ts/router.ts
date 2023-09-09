@@ -2,6 +2,7 @@ import { PageEnum } from "./config";
 import { View } from "./view/view";
 
 const Router = {
+  historyStack: Array<PageState>(),
   init: () => {
     // listener for main navigation icons
     const navLinks = document.querySelectorAll(
@@ -20,7 +21,11 @@ const Router = {
 
     // Event Handler for URL changes
     window.addEventListener("popstate", (event) => {
-      Router.go(event.state.route, false);
+      // Check if the current route is a player page
+      const currentRoute = event.state.route;
+      if (currentRoute && !currentRoute.startsWith("/player")) {
+        Router.go(event.state.route, false);
+      }
     });
 
     // Check the initial URL
@@ -33,6 +38,9 @@ const Router = {
 
     // Update the URL
     if (addToHistory) {
+      Router.historyStack.push({ route });
+      console.log(Router.historyStack);
+
       history.pushState({ route }, "", route);
     }
 
@@ -40,6 +48,30 @@ const Router = {
     window.scrollX = 0;
     window.scrollY = 0;
   },
+
+  // Go to the previous page that is not a player page
+  GoPreviousNonPlayerPage: (): void => {
+    let index = Router.historyStack.length - 1;
+    while (index >= 0) {
+      const state = Router.historyStack[index];
+      console.log(state);
+
+      if (
+        state &&
+        typeof state.route === "string" &&
+        !state.route.startsWith("/player")
+      ) {
+        Router.go(state.route, false);
+        return; // Exit the loop after navigating to the first non-player page
+      }
+      index--;
+    }
+    console.log("hello");
+  },
 };
 
 export default Router;
+
+interface PageState {
+  route: string;
+}
