@@ -27,6 +27,7 @@ class PlayerView {
   songId: any;
   histStack: string[] = [""];
   backArrow!: HTMLElement;
+  likeBtn!: HTMLElement;
 
   private constructor() {
     this.songStorage = new SongStorage();
@@ -174,32 +175,6 @@ class PlayerView {
       "ended",
       this.nextSong.bind(this, NextStatus.End)
     );
-
-    this.shuffleBtn.addEventListener(
-      "click",
-      this.shuffleBtnHandler.bind(this)
-    );
-
-    this.repeatBtn.addEventListener("click", this.repeatBtnHandler.bind(this));
-
-    this.playerBox.element.addEventListener("click", () => {
-      const event = new CustomEvent("go", {
-        detail: {
-          page: `/player/${this.data.id}`,
-        },
-      });
-      window.dispatchEvent(event);
-    });
-
-    // this.backArrow.addEventListener("click", () => {
-    //   const event = new Event("goNonPlayer");
-    //   window.dispatchEvent(event);
-
-    //   // if (!location.pathname.startsWith("/player")) {
-    //   //   // Navigate back to the previous page that is not a player page
-
-    //   // }
-    // });
   }
 
   repeatBtnHandler() {
@@ -278,6 +253,8 @@ class PlayerView {
 
     this.audio = document.getElementById("audio") as HTMLAudioElement;
     this.progress = document.getElementById("progress") as HTMLElement;
+
+    this.likeBtn = document.getElementById("like-song") as HTMLElement;
     this.progressContainer = document.getElementById(
       "progress-container"
     ) as HTMLElement;
@@ -292,6 +269,25 @@ class PlayerView {
 
     this.repeatBtnUpdate();
     this.shuffleBtnUpdate();
+
+    this.configureSomeListeners();
+  }
+  configureSomeListeners() {
+    this.shuffleBtn.addEventListener(
+      "click",
+      this.shuffleBtnHandler.bind(this)
+    );
+
+    this.repeatBtn.addEventListener("click", this.repeatBtnHandler.bind(this));
+
+    this.playerBox.element.addEventListener("click", () => {
+      const event = new CustomEvent("go", {
+        detail: {
+          page: `/player/${this.data.id}`,
+        },
+      });
+      window.dispatchEvent(event);
+    });
   }
 
   // Add a function to format time in "mm:ss" format

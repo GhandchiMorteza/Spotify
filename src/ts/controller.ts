@@ -139,10 +139,16 @@ class Controller {
 
     window.addEventListener("play-inplace", (event) => {
       const customEvent = event as CustomEvent;
-      const itemUrl = customEvent.detail as string;
-      const [_, page, id] = itemUrl.split("/");
+      let itemUrl = customEvent.detail as string;
+      let [_, page, id] = itemUrl.split("/");
 
       PlayerConfigurationClass.updatePlaylist.call(Model.appState.playerConfig);
+      if (id === "all") {
+        id = PlayerConfigurationClass.getFirstOfPlayList.call(
+          Model.appState.playerConfig
+        );
+        itemUrl = `/player/${id}`;
+      }
       View.renderPageElement(itemUrl, false);
     });
 

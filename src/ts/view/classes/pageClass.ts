@@ -26,6 +26,30 @@ export class PageClass<
       this.element.classList.remove("is-active");
     }
     this.createContainers();
+    this.backArrowNavConfig();
+    this.playAllConfig();
+  }
+  backArrowNavConfig() {
+    const backNav = this.element.querySelector(".backnav") as HTMLElement;
+
+    if (backNav) {
+      backNav.addEventListener("click", () => {
+        const event = new Event("goNonPlayer");
+        window.dispatchEvent(event);
+      });
+    }
+  }
+  playAllConfig() {
+    const playAllbtn = this.element.querySelector(".play-all") as HTMLElement;
+
+    if (playAllbtn) {
+      playAllbtn.addEventListener("click", () => {
+        const event = new CustomEvent("play-inplace", {
+          detail: "/player/all",
+        });
+        window.dispatchEvent(event);
+      });
+    }
   }
 
   override render(visible: boolean): void {

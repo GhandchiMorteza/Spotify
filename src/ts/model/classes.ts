@@ -93,6 +93,9 @@ export class PlayerConfigurationClass {
       ? this.shuffledPlaylist[this.currentIndex]
       : this.currentPlaylist[this.currentIndex];
   }
+  static getFirstOfPlayList(this: PlayerConfigurationClass) {
+    return this.shuffle ? this.shuffledPlaylist[0] : this.currentPlaylist[0];
+  }
 }
 
 export const albumGenresDic: AlbumGenreDictionary = {

@@ -53,15 +53,12 @@ const Router = {
     let index = Router.historyStack.length - 2;
     while (index >= 0) {
       const state = Router.historyStack[index];
-      console.log(Router.historyStack[index]);
 
       if (
         state &&
         typeof state.route === "string" &&
         !state.route.startsWith("/player")
       ) {
-        console.log(state);
-
         Router.go(state.route, false);
         Router.historyStack.pop();
         return;

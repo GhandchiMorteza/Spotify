@@ -70,7 +70,6 @@ class ViewSingleton {
       );
 
       this.updatePageContent(route);
-      this.backArrowNavConfig(pageElement);
       return;
     }
 
@@ -85,7 +84,6 @@ class ViewSingleton {
     );
     this.pages[pageRoute] = newPage;
     this.createPageContent(route);
-    this.backArrowNavConfig(newPage.element);
   }
 
   /**
@@ -270,20 +268,6 @@ class ViewSingleton {
       return;
     }
     this.currentPageData = data;
-  }
-
-  backArrowNavConfig(pageELement: HTMLElement) {
-    const backNav = pageELement.querySelector(".backnav") as HTMLElement;
-
-    if (backNav) {
-      backNav.removeEventListener("click", this.dispatchGoNonPlayer);
-
-      backNav.addEventListener("click", this.dispatchGoNonPlayer);
-    }
-  }
-  dispatchGoNonPlayer() {
-    const event = new Event("goNonPlayer");
-    window.dispatchEvent(event);
   }
 }
 
