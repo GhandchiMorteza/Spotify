@@ -65,6 +65,7 @@ const Router = {
       }
       index--;
     }
+    Router.go(PageEnum.home, false);
   },
 };
 
