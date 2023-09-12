@@ -17,6 +17,9 @@
   }
 
   .button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
     margin-bottom: 11rem;
     @include respond-between(ze, xs) {
       margin-bottom: 8rem;

@@ -162,6 +162,16 @@ class ViewSingleton {
     }
   }
 
+  removeItemFromContainerByDataUrl(containerId: string, url: any) {
+    // Get the container by ID using getContainerById
+    const container = this.getContainerById(containerId);
+
+    if (container) {
+      // Use the container's method to add the item
+      container.removeItemByDataUrl(url);
+    }
+  }
+
   updatePageContent(route: string) {
     switch (route) {
       case PageEnum.home:

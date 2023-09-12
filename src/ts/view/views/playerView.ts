@@ -61,10 +61,14 @@ class PlayerView {
     this.backArrow = parentElenent.querySelector(
       ".icon-Arrow-down"
     ) as HTMLElement;
+    this.likeBtn = document.getElementById("like-song") as HTMLElement;
 
     image.src = this.data.thumbnailUrl;
     albumName.textContent = this.data.name;
     artistName.textContent = this.data.artistName;
+    this.data.isLiked
+      ? this.toggleIcon(this.likeBtn, "icon-Heart-stroke", "icon-Heart-green")
+      : this.toggleIcon(this.likeBtn, "icon-Heart-green", "icon-Heart-stroke");
 
     this.updatePlayerBox();
 
@@ -114,6 +118,17 @@ class PlayerView {
     playerBox.trackImageElement.src = this.data.thumbnailUrl;
     playerBox.trackNameElement.textContent = this.data.name;
     playerBox.artistNameElement.textContent = this.data.artistName;
+    this.data.isLiked
+      ? this.toggleIcon(
+          playerBox.likeElement,
+          "icon-Heart-stroke",
+          "icon-Heart-green"
+        )
+      : this.toggleIcon(
+          playerBox.likeElement,
+          "icon-Heart-green",
+          "icon-Heart-stroke"
+        );
   }
 
   playByStart() {
@@ -222,6 +237,30 @@ class PlayerView {
     element.classList.add(after);
   }
 
+  toggleIconIf(element: Element, case1: string, case2: string) {
+    if (element.classList.contains(case1)) {
+      element
+        .querySelector("use")!
+        .setAttributeNS(
+          "http://www.w3.org/1999/xlink",
+          "xlink:href",
+          `${sprite}#${case2}`
+        );
+      element.classList.remove(case1);
+      element.classList.add(case2);
+    } else {
+      element
+        .querySelector("use")!
+        .setAttributeNS(
+          "http://www.w3.org/1999/xlink",
+          "xlink:href",
+          `${sprite}#${case1}`
+        );
+      element.classList.remove(case2);
+      element.classList.add(case1);
+    }
+  }
+
   nextSong(nextStatus: NextStatus) {
     if (!this.isSongLoaded) {
       return;
@@ -254,7 +293,6 @@ class PlayerView {
     this.audio = document.getElementById("audio") as HTMLAudioElement;
     this.progress = document.getElementById("progress") as HTMLElement;
 
-    this.likeBtn = document.getElementById("like-song") as HTMLElement;
     this.progressContainer = document.getElementById(
       "progress-container"
     ) as HTMLElement;
@@ -279,6 +317,15 @@ class PlayerView {
     );
 
     this.repeatBtn.addEventListener("click", this.repeatBtnHandler.bind(this));
+    this.playerBox.likeElement.addEventListener("click", (event) => {
+      const customEvent = new CustomEvent("like", {
+        detail: {
+          url: `/player/${this.data.id}`,
+        },
+      });
+      window.dispatchEvent(customEvent);
+      event.stopPropagation();
+    });
 
     this.playerBox.element.addEventListener("click", () => {
       const event = new CustomEvent("go", {
@@ -288,6 +335,24 @@ class PlayerView {
       });
       window.dispatchEvent(event);
     });
+
+    this.likeBtn.addEventListener("click", () => {
+      const event = new CustomEvent("like", {
+        detail: {
+          url: `/player/${this.data.id}`,
+        },
+      });
+      window.dispatchEvent(event);
+    });
+  }
+
+  public toggleLikeBtn() {
+    this.toggleIconIf(this.likeBtn, "icon-Heart-green", "icon-Heart-stroke");
+    this.toggleIconIf(
+      this.playerBox.likeElement,
+      "icon-Heart-green",
+      "icon-Heart-stroke"
+    );
   }
 
   // Add a function to format time in "mm:ss" format

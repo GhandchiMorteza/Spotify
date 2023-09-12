@@ -6,6 +6,7 @@ import { PlayerConfigurationClass } from "./model/classes";
 import { ContainerClass } from "./view/classes/containerClass";
 import { NextStatus } from "./view/interfaces";
 import AppStateClass from "./model/appStateSingleton";
+import PlayerView from "./view/views/playerView";
 
 class Controller {
   private static instance: Controller | null = null;
@@ -154,6 +155,29 @@ class Controller {
 
     window.addEventListener("goNonPlayer", (event) => {
       Router.GoPreviousNonPlayerPage();
+    });
+
+    window.addEventListener("like", (event) => {
+      const customEvent = event as CustomEvent;
+      let itemUrl = customEvent.detail.url as string;
+      let [_, page, id] = itemUrl.split("/");
+      const track = AppStateClass.getTrackById(Model.appState, id) as Track;
+      track.isLiked = track.isLiked ? false : true;
+      const playerView = PlayerView.getInstance();
+      if (playerView.data.id === id) {
+        playerView.toggleLikeBtn();
+      }
+      if (track.isLiked === true) {
+        View.addItemToContainer(
+          "LikedsongsContainerItmes",
+          AppStateClass.mapItemToFormat(Model.appState, track)
+        );
+      } else {
+        View.removeItemFromContainerByDataUrl(
+          "LikedsongsContainerItmes",
+          itemUrl
+        );
+      }
     });
   }
 }

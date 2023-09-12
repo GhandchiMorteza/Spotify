@@ -57,6 +57,19 @@ export class ContainerClass<T extends HTMLElement, U extends HTMLElement>
         }
       }
 
+      if (iconElement && iconElement.classList.contains("icon-Heart-green")) {
+        if (itemHasURL && itemHasURL.dataset.url) {
+          this.removeItemByDataUrl(itemHasURL.dataset.url as string);
+          const customEvent = new CustomEvent("like", {
+            detail: {
+              url: itemHasURL.dataset.url,
+            },
+          });
+          window.dispatchEvent(customEvent);
+          return;
+        }
+      }
+
       // Go to `dataset.url` URL.
       if (itemHasURL) {
         const itemAsHTMLElement = itemHasURL as HTMLElement;
