@@ -33,6 +33,8 @@ const Router = {
   },
 
   go: (route: string, addToHistory: boolean = true) => {
+    Router.acvtivateNav(route);
+
     //Render or load the route page element
     const pageElement = View.renderPageElement(route === "/" ? "/home" : route);
 
@@ -59,13 +61,43 @@ const Router = {
         typeof state.route === "string" &&
         !state.route.startsWith("/player")
       ) {
-        Router.go(state.route, false);
-        Router.historyStack.pop();
+        Router.go(state.route, true);
+        Router.historyStack.splice(-2);
         return;
       }
       index--;
     }
-    Router.go(PageEnum.home, false);
+    Router.go(PageEnum.home, true);
+    Router.historyStack.splice(-2);
+  },
+  acvtivateNav: (route: string): void => {
+    switch (true) {
+      case route === "/":
+      case route.includes(PageEnum.home):
+        (document.getElementById("home-link") as HTMLElement).style.stroke =
+          "#fff";
+        (document.getElementById("search-link") as HTMLElement).style.stroke =
+          "none";
+        (document.getElementById("library-link") as HTMLElement).style.stroke =
+          "none";
+        break;
+      case route.includes(PageEnum.library):
+        (document.getElementById("library-link") as HTMLElement).style.stroke =
+          "#fff";
+        (document.getElementById("search-link") as HTMLElement).style.stroke =
+          "none";
+        (document.getElementById("home-link") as HTMLElement).style.stroke =
+          "none";
+        break;
+      case route.includes(PageEnum.search):
+        (document.getElementById("search-link") as HTMLElement).style.stroke =
+          "#fff";
+        (document.getElementById("library-link") as HTMLElement).style.stroke =
+          "none";
+        (document.getElementById("home-link") as HTMLElement).style.stroke =
+          "none";
+        break;
+    }
   },
 };
 
