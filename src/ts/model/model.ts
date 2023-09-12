@@ -13,9 +13,9 @@ import { ItemType } from "../helpers";
 export let appState = AppStateClass.getInstance();
 
 // Add an event listener to save app state before the page is unloaded
-// window.addEventListener("beforeunload", () => {
-//   updateAndSaveAppState();
-// });
+window.addEventListener("beforeunload", () => {
+  updateAndSaveAppState();
+});
 
 function updateAndSaveAppState() {
   // Serialize and save the updated appState
@@ -143,6 +143,15 @@ export function getDataForPage(route: string): object | undefined {
       ];
       break;
     case PageEnum.likedSongs:
+      const tracks = AppStateClass.getTracksById(
+        appState,
+        appState.likedTracks
+      );
+      // Updating current playlist for player
+      PlayerConfigurationClass.updatePagePlaylist.call(
+        appState.playerConfig,
+        tracks
+      );
       return [
         // ITEMS: Liked tracks
         AppStateClass.mapItemsToFormatByTypeAndIds(

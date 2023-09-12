@@ -7,6 +7,7 @@ import { ContainerClass } from "./view/classes/containerClass";
 import { NextStatus } from "./view/interfaces";
 import AppStateClass from "./model/appStateSingleton";
 import PlayerView from "./view/views/playerView";
+import { PageEnum } from "./config";
 
 class Controller {
   private static instance: Controller | null = null;
@@ -143,7 +144,18 @@ class Controller {
       let itemUrl = customEvent.detail as string;
       let [_, page, id] = itemUrl.split("/");
 
-      PlayerConfigurationClass.updatePlaylist.call(Model.appState.playerConfig);
+      if (page === PageEnum.likedSongs) {
+        PlayerConfigurationClass.updatePlaylist.call(
+          Model.appState.playerConfig,
+          undefined,
+          true
+        );
+      } else {
+        PlayerConfigurationClass.updatePlaylist.call(
+          Model.appState.playerConfig
+        );
+      }
+
       if (id === "all") {
         id = PlayerConfigurationClass.getFirstOfPlayList.call(
           Model.appState.playerConfig
@@ -164,15 +176,21 @@ class Controller {
       const track = AppStateClass.getTrackById(Model.appState, id) as Track;
       track.isLiked = track.isLiked ? false : true;
       const playerView = PlayerView.getInstance();
-      if (playerView.data.id === id) {
+      if (playerView.data && playerView.data.id === id) {
         playerView.toggleLikeBtn();
       }
       if (track.isLiked === true) {
+        Model.appState.likedTracks.push(id);
         View.addItemToContainer(
           "LikedsongsContainerItmes",
           AppStateClass.mapItemToFormat(Model.appState, track)
         );
       } else {
+        Model.appState.likedTracks = Model.appState.likedTracks.filter(
+          (itemId) => {
+            itemId === id;
+          }
+        );
         View.removeItemFromContainerByDataUrl(
           "LikedsongsContainerItmes",
           itemUrl

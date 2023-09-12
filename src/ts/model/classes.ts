@@ -49,7 +49,8 @@ export class PlayerConfigurationClass {
   ) {}
   static updatePlaylist(
     this: PlayerConfigurationClass,
-    index: number = 0
+    index: number = 0,
+    shuffledplay = false
   ): void {
     this.currentPlaylist.splice(0, this.currentPlaylist.length);
     this.shuffledPlaylist.splice(0, this.shuffledPlaylist.length);
@@ -57,6 +58,10 @@ export class PlayerConfigurationClass {
       this.currentPlaylist.push(trackId);
     });
     this.shuffledPlaylist = shuffleArray(this.currentPlaylist);
+    if (!shuffledplay) {
+      this.currentPlaylist = this.shuffledPlaylist;
+    }
+
     this.currentIndex = index;
   }
   static updatePagePlaylist(this: PlayerConfigurationClass, tracks: Track[]) {
