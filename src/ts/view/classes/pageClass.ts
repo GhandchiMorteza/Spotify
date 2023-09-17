@@ -43,7 +43,13 @@ export class PageClass<
     const playAllbtn = this.element.querySelector(".play-all") as HTMLElement;
 
     if (playAllbtn) {
+      const shuffleBtn = playAllbtn.nextElementSibling as HTMLElement;
       playAllbtn.addEventListener("click", () => {
+        shuffleBtn.addEventListener("click", () => {
+          const shuffleBtnPressed = new Event("shuffle-btn-pressed");
+          window.dispatchEvent(shuffleBtnPressed);
+          console.log("hell");
+        });
         const event = new CustomEvent("play-inplace", {
           detail: "/player/all",
         });

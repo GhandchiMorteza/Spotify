@@ -207,9 +207,8 @@ class PlayerView {
   shuffleBtnHandler() {
     const shuffleBtnPressed = new Event("shuffle-btn-pressed");
     window.dispatchEvent(shuffleBtnPressed);
-    this.shuffleBtnUpdate();
   }
-  shuffleBtnUpdate() {
+  public shuffleBtnUpdate() {
     if (this.playConfig.shuffle) {
       this.toggleIcon(
         this.shuffleBtn,

@@ -8,6 +8,8 @@ import { NextStatus } from "./view/interfaces";
 import AppStateClass from "./model/appStateSingleton";
 import PlayerView from "./view/views/playerView";
 import { PageEnum } from "./config";
+import ArtistView from "./view/views/artistView";
+import AlbumView from "./view/views/albumView";
 
 class Controller {
   private static instance: Controller | null = null;
@@ -75,6 +77,12 @@ class Controller {
       } else {
         Model.appState.playerConfig.shuffle = true;
       }
+      const playerView = PlayerView.getInstance();
+      playerView.shuffleBtnUpdate();
+      const artistview = ArtistView.getInstance();
+      artistview.toggleShuffleBtn();
+      const albumview = AlbumView.getInstance();
+      albumview.toggleShuffleBtn();
     });
 
     window.addEventListener("next-song", (event) => {
@@ -137,12 +145,12 @@ class Controller {
       AppStateClass.removeItemFromRecentSelected(Model.appState, type, id);
     });
 
-    window.addEventListener("play-album", (event) => {});
-
     window.addEventListener("play-inplace", (event) => {
       const customEvent = event as CustomEvent;
       let itemUrl = customEvent.detail as string;
       let [_, page, id] = itemUrl.split("/");
+
+      Model.appState.playerConfig.shuffle = false;
 
       if (page === PageEnum.likedSongs) {
         PlayerConfigurationClass.updatePlaylist.call(

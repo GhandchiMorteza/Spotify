@@ -1,3 +1,6 @@
+// @ts-ignore - Changing string urls for parcel sprite
+import sprite from "url:../../../img/sprite.svg";
+
 class AlbumView {
   private static instance: AlbumView | null = null;
   configured: Boolean = false;
@@ -53,6 +56,38 @@ class AlbumView {
     //   const event = new Event("goNonPlayer");
     //   window.dispatchEvent(event);
     // });
+  }
+  toggleShuffleBtn() {
+    if (this.shuffleAlbumBtn) {
+      this.toggleIconIf(
+        this.shuffleAlbumBtn,
+        "icon-shuffle-circle-green",
+        "icon-shuffle-circle"
+      );
+    }
+  }
+  toggleIconIf(element: Element, case1: string, case2: string) {
+    if (element.classList.contains(case1)) {
+      element
+        .querySelector("use")!
+        .setAttributeNS(
+          "http://www.w3.org/1999/xlink",
+          "xlink:href",
+          `${sprite}#${case2}`
+        );
+      element.classList.remove(case1);
+      element.classList.add(case2);
+    } else {
+      element
+        .querySelector("use")!
+        .setAttributeNS(
+          "http://www.w3.org/1999/xlink",
+          "xlink:href",
+          `${sprite}#${case1}`
+        );
+      element.classList.remove(case2);
+      element.classList.add(case1);
+    }
   }
 }
 
