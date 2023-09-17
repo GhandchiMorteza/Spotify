@@ -48,7 +48,6 @@ export class PageClass<
         shuffleBtn.addEventListener("click", () => {
           const shuffleBtnPressed = new Event("shuffle-btn-pressed");
           window.dispatchEvent(shuffleBtnPressed);
-          console.log("hell");
         });
         const event = new CustomEvent("play-inplace", {
           detail: "/player/all",
