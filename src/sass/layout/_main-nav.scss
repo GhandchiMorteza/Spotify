@@ -38,4 +38,14 @@
   &__text {
     line-height: normal;
   }
+
+  &--active {
+    svg {
+      stroke: #fff;
+      stroke-width: 0.05rem;
+    }
+    span {
+      color: #fff;
+    }
+  }
 }

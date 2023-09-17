@@ -6,6 +6,8 @@ import PlayerView from "./views/playerView";
 import ArtistView from "./views/artistView";
 import SearchView from "./views/searchView";
 import { ContainerClass } from "./classes/containerClass";
+// @ts-ignore - Changing string urls for parcel sprite
+import sprite from "url:../../img/sprite.svg";
 
 class ViewSingleton {
   private static instance: ViewSingleton;
@@ -32,10 +34,8 @@ class ViewSingleton {
     if (visible) {
       this.deactivePrePage();
     }
-    let pageRoute = route;
 
-    const nav = document.querySelector("nav.main-nav");
-    nav?.classList.remove("display-none");
+    this.navActivate(route);
 
     const boxPlayerElement = document.getElementById(
       "box-player"
@@ -45,6 +45,7 @@ class ViewSingleton {
       boxPlayerElement.classList.remove("display-none");
     }
 
+    let pageRoute = route;
     const isLibraryRoute =
       route === PageEnum.artists || route === PageEnum.playlists;
     if (isLibraryRoute) {
@@ -84,6 +85,77 @@ class ViewSingleton {
     );
     this.pages[pageRoute] = newPage;
     this.createPageContent(route);
+  }
+  navActivate(route: string) {
+    const nav = document.querySelector("nav.main-nav");
+    nav?.classList.remove("display-none");
+
+    switch (true) {
+      case route === "/":
+      case route.includes(PageEnum.home):
+        this.toggleIcon(
+          document.getElementById("home-link") as Element,
+          "icon-Home",
+          "icon-Home-selected"
+        );
+        (document.getElementById("home-link") as HTMLElement).classList.add(
+          "main-nav--active"
+        );
+        (
+          document.getElementById("search-link") as HTMLElement
+        ).classList.remove("main-nav--active");
+        (
+          document.getElementById("library-link") as HTMLElement
+        ).classList.remove("main-nav--active");
+        break;
+      case route.includes(PageEnum.library):
+        (document.getElementById("library-link") as HTMLElement).classList.add(
+          "main-nav--active"
+        );
+
+        (
+          document.getElementById("search-link") as HTMLElement
+        ).classList.remove("main-nav--active");
+        (document.getElementById("home-link") as HTMLElement).classList.remove(
+          "main-nav--active"
+        );
+        this.toggleIcon(
+          document.getElementById("home-link") as Element,
+          "icon-Home-selected",
+          "icon-Home"
+        );
+        break;
+      case route.includes(PageEnum.search):
+        (document.getElementById("search-link") as HTMLElement).classList.add(
+          "main-nav--active"
+        );
+
+        (
+          document.getElementById("library-link") as HTMLElement
+        ).classList.remove("main-nav--active");
+        (document.getElementById("home-link") as HTMLElement).classList.remove(
+          "main-nav--active"
+        );
+
+        this.toggleIcon(
+          document.getElementById("home-link") as Element,
+          "icon-Home-selected",
+          "icon-Home"
+        );
+        break;
+    }
+  }
+
+  public toggleIcon(element: Element, current: string, after: string) {
+    element
+      .querySelector("use")!
+      .setAttributeNS(
+        "http://www.w3.org/1999/xlink",
+        "xlink:href",
+        `${sprite}#${after}`
+      );
+    element.classList.remove(current);
+    element.classList.add(after);
   }
 
   /**
